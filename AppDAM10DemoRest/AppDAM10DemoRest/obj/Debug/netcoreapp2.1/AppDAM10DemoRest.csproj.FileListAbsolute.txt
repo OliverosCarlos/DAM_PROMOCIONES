@@ -1,0 +1,46 @@
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.deps.json
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.runtimeconfig.json
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.runtimeconfig.dev.json
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.dll
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csprojAssemblyReference.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csproj.CoreCompileInputs.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorAssemblyInfo.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorAssemblyInfo.cs
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.AssemblyInfoInputs.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.AssemblyInfo.cs
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorTargetAssemblyInfo.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.TagHelpers.input.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.TagHelpers.output.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorCoreGenerate.cache
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\Razor\Views\FicIndex\Index.g.cshtml.cs
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorTargetAssemblyInfo.cs
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.pdb
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.dll
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.pdb
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.pdb
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.dll
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.pdb
+C:\Users\Reynoso\Documents\TEC\8 semestre\Multiplataforma\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csproj.CopyComplete
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.deps.json
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.runtimeconfig.json
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.runtimeconfig.dev.json
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.dll
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.pdb
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.dll
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\bin\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.pdb
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csprojAssemblyReference.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csproj.CoreCompileInputs.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorAssemblyInfo.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorAssemblyInfo.cs
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.AssemblyInfoInputs.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.AssemblyInfo.cs
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.TagHelpers.input.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.TagHelpers.output.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorCoreGenerate.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\Razor\Views\FicIndex\Index.g.cshtml.cs
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorTargetAssemblyInfo.cache
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.RazorTargetAssemblyInfo.cs
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.Views.pdb
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.dll
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.pdb
+C:\Users\carch\Documents\8\DM\AppDAM10DemoRest\AppDAM10DemoRest\AppDAM10DemoRest\obj\Debug\netcoreapp2.1\AppDAM10DemoRest.csproj.CopyComplete
