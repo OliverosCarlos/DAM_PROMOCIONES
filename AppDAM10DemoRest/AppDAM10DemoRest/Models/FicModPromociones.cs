@@ -34,5 +34,14 @@ namespace AppDAM10DemoRest.Models
             public string IdTipoPromocion { get; set; }
             public string IdTipoDescuento { get; set; }
         }
+        public class ce_cat_promociones_aplica_a
+        {
+        }
+        public class ce_cat_promociones_cantidad_fisica
+        {
+        }
+        public class ce_cat_promo_prod_serv
+        {
+        }
     }
 }
