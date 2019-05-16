@@ -36,7 +36,8 @@ namespace AppDAM10DemoRest.Models
         }
         public class ce_cat_promociones_aplica_a
         {
-            public Int16 IdTipoAplicaA { get; set; }// fk de cat_generales
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public int IdTipoAplicaA { get; set; }// fk de cat_generales
             public cat_generales cat_generales { get; set; }
             [StringLength(20)]
             public char Activo { get; set; }
@@ -57,6 +58,7 @@ namespace AppDAM10DemoRest.Models
         }
         public class ce_cat_promociones_cantidad_fisica
         {
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
             [StringLength(20)]
             public string IdPromocion { get; set; }// fk de ce_cat_promociones
             public int Valor { get; set; }
@@ -77,7 +79,7 @@ namespace AppDAM10DemoRest.Models
         }
         public class ce_cat_promo_prod_serv
         {
-
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
             public int IdProdServ { get; set; }//fk de ce_cat_prod_serv_presenta
             [StringLength(20)]
             public string IdPromocion { get; set; }
@@ -99,6 +101,7 @@ namespace AppDAM10DemoRest.Models
         }
         public class cat_tipo_generales
         {
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
             public Int16 IdTipoGeneral { get; set; }
             [StringLength(50)]
             public string DesTipoGeneral { get; set; }
@@ -116,6 +119,7 @@ namespace AppDAM10DemoRest.Models
         }
         public class cat_generales
         {
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
             public Int16 IdGeneral { get; set; }
             [StringLength(50)]
             public string DesGeneral { get; set; }

@@ -48,10 +48,11 @@ namespace AppDAM10DemoRest.Data
         public DbSet<zt_almacenes_ubicaciones> zt_almacenes_ubicaciones { get; set; }
         //promociones
         public DbSet<ce_cat_promociones> ce_cat_promociones { get; set; }
-        //public DbSet<zt_cat_productos> zt_cat_productos { get; set; }
-        //public DbSet<zt_cat_unidad_medidas> zt_cat_unidad_medidas { get; set; }
-        //public DbSet<zt_cat_productos_medidas> zt_cat_productos_medidas { get; set; }
-
+        public DbSet<ce_cat_promociones_aplica_a> ce_cat_promociones_aplica_a { get; set; }
+        public DbSet<ce_cat_promociones_cantidad_fisica> ce_cat_promociones_cantidad_fisica { get; set; }
+        public DbSet<ce_cat_promo_prod_serv> ce_cat_promo_prod_serv { get; set; }
+        public DbSet<cat_tipo_generales> cat_tipo_generales { get; set; }
+        public DbSet<cat_generales> cat_generales { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
