@@ -248,7 +248,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS PROMOCIONES APLICA A ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones/aplica-a")]
+        [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiGetListPromocionesAplicaA([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
         {
 
@@ -265,7 +265,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpGet]
-        [Route("/api/promociones/aplica-a/list")]
+        [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiGetListPromocionesAplicaA()
         {
             var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a select data_promoaplicaa).ToList();
@@ -281,7 +281,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPost]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiNewPromocionesAplicaA
         (
             [FromForm]int idtipoaplicaa,
@@ -306,7 +306,7 @@ namespace AppDAM10DemoRest.Controllers
             return Ok(promocion_aplica_a);
         }
         [HttpDelete]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiDeletePromocionesAplicaA([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
         {
             ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
@@ -326,7 +326,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPut]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiUpdatePromociones
         (
             [FromForm]int idtipoaplicaa,
@@ -362,7 +362,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS PROMOCIONES CANTIDAD FISICA ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones/aplica-a")]
+        [Route("/api/promociones-cantidad-fisica")]
         public async Task<IActionResult> FicApiGetListPromocionesCantidadFisica([FromQuery]string idpromocion)
         {
 
@@ -379,7 +379,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpGet]
-        [Route("/api/promociones/aplica-a/list")]
+        [Route("/api/promociones-cantidad-fisica")]
         public async Task<IActionResult> FicApiGetListPromocionesCantidadFisica()
         {
             var ce_promociones_cantidad_fisica = (from data_promocantidadfisica in FicLoDBContext.ce_cat_promociones_cantidad_fisica select data_promocantidadfisica).ToList();
@@ -395,7 +395,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPost]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-cantidad-fisica")]
         public async Task<IActionResult> FicApiNewPromocionesCantidadFisica
         (
             [FromForm]string idpromocion,
@@ -422,7 +422,7 @@ namespace AppDAM10DemoRest.Controllers
             return Ok(promocion_cantidad_fisica);
         }
         [HttpDelete]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-cantidad-fisica")]
         public async Task<IActionResult> FicApiDeletePromocionesCantidadFisica([FromQuery] string idpromocion)
         {
             ce_cat_promociones_cantidad_fisica promocion_cantidad_fisica = new ce_cat_promociones_cantidad_fisica();
@@ -441,7 +441,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPut]
-        [Route("/api/promociones")]
+        [Route("/api/promociones-cantidad-fisica")]
         public async Task<IActionResult> FicApiUpdatePromocionesCantidadFisica
         (
             [FromForm]string idpromocion,
@@ -479,7 +479,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS PROMO PROD SERV ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones/aplica-a")]
+        [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
         {
             var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv where data_promoprodserv.IdPromocion == idpromocion && data_promoprodserv.IdProdServ == idprodserv && data_promoprodserv.IdPresentacion == idpresentacion select data_promoprodserv).ToList();
@@ -495,7 +495,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpGet]
-        [Route("/api/promociones/aplica-a/list")]
+        [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiGetListPromocionesProdServ()
         {
             var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv select data_promoprodserv).ToList();
@@ -511,7 +511,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPost]
-        [Route("/api/promociones")]
+        [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiNewPromocionesProdServ
         (
             [FromForm]int idprodserv,
@@ -536,7 +536,7 @@ namespace AppDAM10DemoRest.Controllers
             return Ok(promo_prod_serv);
         }
         [HttpDelete]
-        [Route("/api/promociones")]
+        [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
         {
             ce_cat_promo_prod_serv promo_prod_serv = new ce_cat_promo_prod_serv();
@@ -557,7 +557,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPut]
-        [Route("/api/promociones")]
+        [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiUpdatePromocionesProdServ
         (
             [FromForm]int idprodserv,
@@ -593,7 +593,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS TIPO GENERALES ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones/aplica-a")]
+        [Route("/api/tipo-generales")]
         public async Task<IActionResult> FicApiGetListTipoGenerales([FromQuery]short idtipogeneral)
         {
 
@@ -610,7 +610,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpGet]
-        [Route("/api/promociones/aplica-a/list")]
+        [Route("/api/tipo-generales")]
         public async Task<IActionResult> FicApiGetListTipoGenerales()
         {
             var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales select data_tipogenerales).ToList();
@@ -626,7 +626,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPost]
-        [Route("/api/promociones")]
+        [Route("/api/tipo-generales")]
         public async Task<IActionResult> FicApiNewTipoGenerales
         (
             [FromForm]short idtipogeneral,
@@ -649,7 +649,7 @@ namespace AppDAM10DemoRest.Controllers
             return Ok(tipo_generales);
         }
         [HttpDelete]
-        [Route("/api/promociones")]
+        [Route("/api/tipo-generales")]
         public async Task<IActionResult> FicApiDeleteTipoGenerales([FromQuery] short idtipogeneral)
         {
             cat_tipo_generales tipo_generales = new cat_tipo_generales();
@@ -668,7 +668,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPut]
-        [Route("/api/promociones")]
+        [Route("/api/tipo-generales")]
         public async Task<IActionResult> FicApiUpdateTipoGenerales
         (
             [FromForm]short idtipogeneral,
@@ -703,7 +703,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS GENERALES ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones/aplica-a")]
+        [Route("/api/generales")]
         public async Task<IActionResult> FicApiGetListGenerales([FromQuery]short idgeneral)
         {
 
@@ -720,7 +720,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpGet]
-        [Route("/api/promociones/aplica-a/list")]
+        [Route("/api/generales")]
         public async Task<IActionResult> FicApiGetListGenerales()
         {
             var generales = (from data_generales in FicLoDBContext.cat_generales select data_generales).ToList();
@@ -736,7 +736,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPost]
-        [Route("/api/promociones")]
+        [Route("/api/generales")]
         public async Task<IActionResult> FicApiNewGenerales
         (
             [FromForm]short idgeneral,
@@ -759,7 +759,7 @@ namespace AppDAM10DemoRest.Controllers
             return Ok(generales);
         }
         [HttpDelete]
-        [Route("/api/promociones")]
+        [Route("/api/generales")]
         public async Task<IActionResult> FicApiDeleteGenerales([FromQuery] short idgeneral)
         {
             cat_generales generales = new cat_generales();
@@ -778,7 +778,7 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         [HttpPut]
-        [Route("/api/promociones")]
+        [Route("/api/generales")]
         public async Task<IActionResult> FicApiUpdateGenerales
         (
             [FromForm]short idgeneral,
