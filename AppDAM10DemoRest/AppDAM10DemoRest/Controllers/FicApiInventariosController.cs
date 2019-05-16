@@ -366,71 +366,72 @@ namespace AppDAM10DemoRest.Controllers
         public async Task<IActionResult> FicApiGetListPromocionesCantidadFisica([FromQuery]string idpromocion)
         {
 
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a where data_promoaplicaa.IdTipoAplicaA == idtipoaplicaa && data_promoaplicaa.IdPromocion == idpromocion select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var ce_promociones_cantidad_fisica = (from data_promocantidadfisica in FicLoDBContext.ce_cat_promociones_cantidad_fisica where data_promocantidadfisica.IdPromocion == idpromocion select data_promocantidadfisica).ToList();
+            if (ce_promociones_cantidad_fisica.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promociones_cantidad_fisica = ce_promociones_cantidad_fisica.ToList();
+                return Ok(ce_promociones_cantidad_fisica);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promociones_cantidad_fisica = ce_promociones_cantidad_fisica.ToList();
+                return Ok(ce_promociones_cantidad_fisica);
             }
         }
         [HttpGet]
         [Route("/api/promociones/aplica-a/list")]
         public async Task<IActionResult> FicApiGetListPromocionesCantidadFisica()
         {
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var ce_promociones_cantidad_fisica = (from data_promocantidadfisica in FicLoDBContext.ce_cat_promociones_cantidad_fisica select data_promocantidadfisica).ToList();
+            if (ce_promociones_cantidad_fisica.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promociones_cantidad_fisica = ce_promociones_cantidad_fisica.ToList();
+                return Ok(ce_promociones_cantidad_fisica);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promociones_cantidad_fisica = ce_promociones_cantidad_fisica.ToList();
+                return Ok(ce_promociones_cantidad_fisica);
             }
         }
         [HttpPost]
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiNewPromocionesCantidadFisica
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]string idpromocion,
+            [FromForm]int valor,
+            [FromForm]int valoracumulado,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
             [FromForm]string usuarioreg,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]short idtipodescuento
         )
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-            promocion_aplica_a.Activo = activo;
-            promocion_aplica_a.Borrado = borrado;
-            promocion_aplica_a.FechaReg = fechareg;
-            promocion_aplica_a.UsuarioReg = usuarioreg;
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.Valor = valor;
-            FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+            ce_cat_promociones_cantidad_fisica promocion_cantidad_fisica= new ce_cat_promociones_cantidad_fisica();
+            promocion_cantidad_fisica.IdPromocion = idpromocion;
+            promocion_cantidad_fisica.Valor = valor;
+            promocion_cantidad_fisica.ValorAcumulado = valoracumulado;
+            promocion_cantidad_fisica.Activo = activo;
+            promocion_cantidad_fisica.Borrado = borrado;
+            promocion_cantidad_fisica.FechaReg = fechareg;
+            promocion_cantidad_fisica.UsuarioReg = usuarioreg;
+            promocion_cantidad_fisica.idTipoDescuento = idtipodescuento;
+            FicLoDBContext.ce_cat_promociones_cantidad_fisica.Add(promocion_cantidad_fisica);
             FicLoDBContext.SaveChanges();
-            return Ok(promocion_aplica_a);
+            return Ok(promocion_cantidad_fisica);
         }
         [HttpDelete]
         [Route("/api/promociones")]
-        public async Task<IActionResult> FicApiDeletePromocionesCantidadFisica([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiDeletePromocionesCantidadFisica([FromQuery] string idpromocion)
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
+            ce_cat_promociones_cantidad_fisica promocion_cantidad_fisica = new ce_cat_promociones_cantidad_fisica();
+            promocion_cantidad_fisica.IdPromocion = idpromocion;
             try
             {
-                FicLoDBContext.ce_cat_promociones_aplica_a.Remove(promocion_aplica_a);
+                FicLoDBContext.ce_cat_promociones_cantidad_fisica.Remove(promocion_cantidad_fisica);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(promocion_cantidad_fisica);
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
             {
@@ -443,28 +444,30 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiUpdatePromocionesCantidadFisica
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]string idpromocion,
+            [FromForm]int valor,
+            [FromForm]int valoracumulado,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechaultmod,
             [FromForm]string usuariomod,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]short idtipodescuento
         )
         {
             try
             {
-                var promocion_aplica_a = FicLoDBContext.ce_cat_promociones_aplica_a.First(a => a.IdPromocion == idpromocion && a.IdTipoAplicaA == idtipoaplicaa);
-                promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-                promocion_aplica_a.Activo = activo;
-                promocion_aplica_a.Borrado = borrado;
-                promocion_aplica_a.FechaUltMod = fechaultmod;
-                promocion_aplica_a.UsuarioMod = usuariomod;
-                promocion_aplica_a.IdPromocion = idpromocion;
-                promocion_aplica_a.Valor = valor;
-                FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+                var promocion_cantidad_fisica = FicLoDBContext.ce_cat_promociones_cantidad_fisica.First(a => a.IdPromocion == idpromocion);
+                promocion_cantidad_fisica.IdPromocion = idpromocion;
+                promocion_cantidad_fisica.Valor = valor;
+                promocion_cantidad_fisica.ValorAcumulado = valoracumulado;
+                promocion_cantidad_fisica.Activo = activo;
+                promocion_cantidad_fisica.Borrado = borrado;
+                promocion_cantidad_fisica.FechaUltMod = fechaultmod;
+                promocion_cantidad_fisica.UsuarioMod = usuariomod;
+                promocion_cantidad_fisica.idTipoDescuento = idtipodescuento;
+                FicLoDBContext.ce_cat_promociones_cantidad_fisica.Add(promocion_cantidad_fisica);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(promocion_cantidad_fisica);
             }
             catch (Exception e)
             {
@@ -477,74 +480,74 @@ namespace AppDAM10DemoRest.Controllers
 
         [HttpGet]
         [Route("/api/promociones/aplica-a")]
-        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
         {
-
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a where data_promoaplicaa.IdTipoAplicaA == idtipoaplicaa && data_promoaplicaa.IdPromocion == idpromocion select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv where data_promoprodserv.IdPromocion == idpromocion && data_promoprodserv.IdProdServ == idprodserv && data_promoprodserv.IdPresentacion == idpresentacion select data_promoprodserv).ToList();
+            if (ce_promo_prod_serv.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promo_prod_serv = ce_promo_prod_serv.ToList();
+                return Ok(ce_promo_prod_serv);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promo_prod_serv = ce_promo_prod_serv.ToList();
+                return Ok(ce_promo_prod_serv);
             }
         }
         [HttpGet]
         [Route("/api/promociones/aplica-a/list")]
         public async Task<IActionResult> FicApiGetListPromocionesProdServ()
         {
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv select data_promoprodserv).ToList();
+            if (ce_promo_prod_serv.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promo_prod_serv = ce_promo_prod_serv.ToList();
+                return Ok(ce_promo_prod_serv);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                ce_promo_prod_serv = ce_promo_prod_serv.ToList();
+                return Ok(ce_promo_prod_serv);
             }
         }
         [HttpPost]
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiNewPromocionesProdServ
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]int idprodserv,
+            [FromForm]string idpromocion,
+            [FromForm]string idpresentacion,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuarioreg
         )
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-            promocion_aplica_a.Activo = activo;
-            promocion_aplica_a.Borrado = borrado;
-            promocion_aplica_a.FechaReg = fechareg;
-            promocion_aplica_a.UsuarioReg = usuarioreg;
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.Valor = valor;
-            FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+            ce_cat_promo_prod_serv promo_prod_serv = new ce_cat_promo_prod_serv();
+            promo_prod_serv.IdProdServ = idprodserv;
+            promo_prod_serv.IdPromocion = idpromocion;
+            promo_prod_serv.IdPresentacion = idpresentacion;
+            promo_prod_serv.Activo = activo;
+            promo_prod_serv.Borrado = borrado;
+            promo_prod_serv.FechaReg = fechareg;
+            promo_prod_serv.UsuarioReg = usuarioreg;
+            FicLoDBContext.ce_cat_promo_prod_serv.Add(promo_prod_serv);
             FicLoDBContext.SaveChanges();
-            return Ok(promocion_aplica_a);
+            return Ok(promo_prod_serv);
         }
         [HttpDelete]
         [Route("/api/promociones")]
-        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
+            ce_cat_promo_prod_serv promo_prod_serv = new ce_cat_promo_prod_serv();
+            promo_prod_serv.IdProdServ = idprodserv;
+            promo_prod_serv.IdPromocion = idpromocion;
+            promo_prod_serv.IdPresentacion = idpresentacion;
             try
             {
-                FicLoDBContext.ce_cat_promociones_aplica_a.Remove(promocion_aplica_a);
+                FicLoDBContext.ce_cat_promo_prod_serv.Remove(promo_prod_serv);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(promo_prod_serv);
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
             {
@@ -557,28 +560,28 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiUpdatePromocionesProdServ
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]int idprodserv,
+            [FromForm]string idpromocion,
+            [FromForm]string idpresentacion,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuariomod
         )
         {
             try
             {
-                var promocion_aplica_a = FicLoDBContext.ce_cat_promociones_aplica_a.First(a => a.IdPromocion == idpromocion && a.IdTipoAplicaA == idtipoaplicaa);
-                promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-                promocion_aplica_a.Activo = activo;
-                promocion_aplica_a.Borrado = borrado;
-                promocion_aplica_a.FechaUltMod = fechaultmod;
-                promocion_aplica_a.UsuarioMod = usuariomod;
-                promocion_aplica_a.IdPromocion = idpromocion;
-                promocion_aplica_a.Valor = valor;
-                FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+                var promo_prod_serv = FicLoDBContext.ce_cat_promo_prod_serv.First(a => a.IdProdServ == idprodserv && a.IdPromocion == idpromocion && a.IdPresentacion == idpresentacion);
+                promo_prod_serv.IdProdServ = idprodserv;
+                promo_prod_serv.IdPromocion = idpromocion;
+                promo_prod_serv.IdPresentacion = idpresentacion;
+                promo_prod_serv.Activo = activo;
+                promo_prod_serv.Borrado = borrado;
+                promo_prod_serv.FechaUltMod = fechaultmod;
+                promo_prod_serv.UsuarioMod = usuariomod;
+                FicLoDBContext.ce_cat_promo_prod_serv.Add(promo_prod_serv);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(promo_prod_serv);
             }
             catch (Exception e)
             {
@@ -591,74 +594,71 @@ namespace AppDAM10DemoRest.Controllers
 
         [HttpGet]
         [Route("/api/promociones/aplica-a")]
-        public async Task<IActionResult> FicApiGetListTipoGenerales([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiGetListTipoGenerales([FromQuery]short idtipogeneral)
         {
 
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a where data_promoaplicaa.IdTipoAplicaA == idtipoaplicaa && data_promoaplicaa.IdPromocion == idpromocion select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales where data_tipogenerales.IdTipoGeneral == idtipogeneral  select data_tipogenerales).ToList();
+            if (tipo_generales.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                tipo_generales = tipo_generales.ToList();
+                return Ok(tipo_generales);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                tipo_generales = tipo_generales.ToList();
+                return Ok(tipo_generales);
             }
         }
         [HttpGet]
         [Route("/api/promociones/aplica-a/list")]
         public async Task<IActionResult> FicApiGetListTipoGenerales()
         {
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales select data_tipogenerales).ToList();
+            if (tipo_generales.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                tipo_generales = tipo_generales.ToList();
+                return Ok(tipo_generales);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                tipo_generales = tipo_generales.ToList();
+                return Ok(tipo_generales);
             }
         }
         [HttpPost]
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiNewTipoGenerales
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]short idtipogeneral,
+            [FromForm]string destipogeneral,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuarioreg
         )
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-            promocion_aplica_a.Activo = activo;
-            promocion_aplica_a.Borrado = borrado;
-            promocion_aplica_a.FechaReg = fechareg;
-            promocion_aplica_a.UsuarioReg = usuarioreg;
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.Valor = valor;
-            FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+            cat_tipo_generales tipo_generales = new cat_tipo_generales();
+            tipo_generales.IdTipoGeneral = idtipogeneral;
+            tipo_generales.DesTipoGeneral = destipogeneral;
+            tipo_generales.Activo = activo;
+            tipo_generales.Borrado = borrado;
+            tipo_generales.FechaReg = fechareg;
+            tipo_generales.UsuarioReg = usuarioreg;
+            FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
             FicLoDBContext.SaveChanges();
-            return Ok(promocion_aplica_a);
+            return Ok(tipo_generales);
         }
         [HttpDelete]
         [Route("/api/promociones")]
-        public async Task<IActionResult> FicApiDeleteTipoGenerales([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiDeleteTipoGenerales([FromQuery] short idtipogeneral)
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
+            cat_tipo_generales tipo_generales = new cat_tipo_generales();
+            tipo_generales.IdTipoGeneral = idtipogeneral;
             try
             {
-                FicLoDBContext.ce_cat_promociones_aplica_a.Remove(promocion_aplica_a);
+                FicLoDBContext.cat_tipo_generales.Remove(tipo_generales);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(tipo_generales);
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
             {
@@ -671,28 +671,26 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiUpdateTipoGenerales
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]short idtipogeneral,
+            [FromForm]string destipogeneral,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuariomod
         )
         {
             try
             {
-                var promocion_aplica_a = FicLoDBContext.ce_cat_promociones_aplica_a.First(a => a.IdPromocion == idpromocion && a.IdTipoAplicaA == idtipoaplicaa);
-                promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-                promocion_aplica_a.Activo = activo;
-                promocion_aplica_a.Borrado = borrado;
-                promocion_aplica_a.FechaUltMod = fechaultmod;
-                promocion_aplica_a.UsuarioMod = usuariomod;
-                promocion_aplica_a.IdPromocion = idpromocion;
-                promocion_aplica_a.Valor = valor;
-                FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+                var tipo_generales = FicLoDBContext.cat_tipo_generales.First(a => a.IdTipoGeneral == idtipogeneral);
+                tipo_generales.IdTipoGeneral = idtipogeneral;
+                tipo_generales.DesTipoGeneral = destipogeneral;
+                tipo_generales.Activo = activo;
+                tipo_generales.Borrado = borrado;
+                tipo_generales.FechaUltMod = fechaultmod;
+                tipo_generales.UsuarioMod = usuariomod;
+                FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(tipo_generales);
             }
             catch (Exception e)
             {
@@ -701,78 +699,76 @@ namespace AppDAM10DemoRest.Controllers
                 return Ok(err);
             }
         }
+
         //RUTAS GENERALES ===================================================================================
 
         [HttpGet]
         [Route("/api/promociones/aplica-a")]
-        public async Task<IActionResult> FicApiGetListGenerales([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiGetListGenerales([FromQuery]short idgeneral)
         {
 
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a where data_promoaplicaa.IdTipoAplicaA == idtipoaplicaa && data_promoaplicaa.IdPromocion == idpromocion select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var general = (from data_general in FicLoDBContext.cat_generales where data_general.IdGeneral == idgeneral select data_general).ToList();
+            if (general.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                general = general.ToList();
+                return Ok(general);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                general = general.ToList();
+                return Ok(general);
             }
         }
         [HttpGet]
         [Route("/api/promociones/aplica-a/list")]
         public async Task<IActionResult> FicApiGetListGenerales()
         {
-            var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a select data_promoaplicaa).ToList();
-            if (ce_promociones_aplica_a.Count() > 0)
+            var generales = (from data_generales in FicLoDBContext.cat_generales select data_generales).ToList();
+            if (generales.Count() > 0)
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                generales = generales.ToList();
+                return Ok(generales);
             }
             else
             {
-                ce_promociones_aplica_a = ce_promociones_aplica_a.ToList();
-                return Ok(ce_promociones_aplica_a);
+                generales = generales.ToList();
+                return Ok(generales);
             }
         }
         [HttpPost]
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiNewGenerales
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]short idgeneral,
+            [FromForm]string desgeneral,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuarioreg
         )
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-            promocion_aplica_a.Activo = activo;
-            promocion_aplica_a.Borrado = borrado;
-            promocion_aplica_a.FechaReg = fechareg;
-            promocion_aplica_a.UsuarioReg = usuarioreg;
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.Valor = valor;
-            FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+            cat_generales generales = new cat_generales();
+            generales.IdGeneral = idgeneral;
+            generales.DesGeneral = desgeneral;
+            generales.Activo = activo;
+            generales.Borrado = borrado;
+            generales.FechaReg = fechareg;
+            generales.UsuarioReg = usuarioreg;
+            FicLoDBContext.cat_generales.Add(generales);
             FicLoDBContext.SaveChanges();
-            return Ok(promocion_aplica_a);
+            return Ok(generales);
         }
         [HttpDelete]
         [Route("/api/promociones")]
-        public async Task<IActionResult> FicApiDeleteGenerales([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiDeleteGenerales([FromQuery] short idgeneral)
         {
-            ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
-            promocion_aplica_a.IdPromocion = idpromocion;
-            promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
+            cat_generales generales = new cat_generales();
+            generales.IdGeneral = idgeneral;
             try
             {
-                FicLoDBContext.ce_cat_promociones_aplica_a.Remove(promocion_aplica_a);
+                FicLoDBContext.cat_generales.Remove(generales);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(generales);
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
             {
@@ -785,28 +781,26 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiUpdateGenerales
         (
-            [FromForm]int idtipoaplicaa,
+            [FromForm]short idgeneral,
+            [FromForm]string desgeneral,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod,
-            [FromForm]string idpromocion,
-            [FromForm]string valor
+            [FromForm]string usuariomod
         )
         {
             try
             {
-                var promocion_aplica_a = FicLoDBContext.ce_cat_promociones_aplica_a.First(a => a.IdPromocion == idpromocion && a.IdTipoAplicaA == idtipoaplicaa);
-                promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
-                promocion_aplica_a.Activo = activo;
-                promocion_aplica_a.Borrado = borrado;
-                promocion_aplica_a.FechaUltMod = fechaultmod;
-                promocion_aplica_a.UsuarioMod = usuariomod;
-                promocion_aplica_a.IdPromocion = idpromocion;
-                promocion_aplica_a.Valor = valor;
-                FicLoDBContext.ce_cat_promociones_aplica_a.Add(promocion_aplica_a);
+                var generales = FicLoDBContext.cat_generales.First(a => a.IdGeneral == idgeneral);
+                generales.IdGeneral = idgeneral;
+                generales.DesGeneral = desgeneral;
+                generales.Activo = activo;
+                generales.Borrado = borrado;
+                generales.FechaUltMod = fechaultmod;
+                generales.UsuarioMod = usuariomod;
+                FicLoDBContext.cat_generales.Add(generales);
                 FicLoDBContext.SaveChanges();
-                return Ok(promocion_aplica_a);
+                return Ok(generales);
             }
             catch (Exception e)
             {
