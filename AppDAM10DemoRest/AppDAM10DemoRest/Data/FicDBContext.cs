@@ -51,8 +51,8 @@ namespace AppDAM10DemoRest.Data
         public DbSet<ce_cat_promociones_aplica_a> ce_cat_promociones_aplica_a { get; set; }
         public DbSet<ce_cat_promociones_cantidad_fisica> ce_cat_promociones_cantidad_fisica { get; set; }
         public DbSet<ce_cat_promo_prod_serv> ce_cat_promo_prod_serv { get; set; }
-        public DbSet<cat_tipo_generales> cat_tipo_generales { get; set; }
-        public DbSet<cat_generales> cat_generales { get; set; }
+        //public DbSet<cat_tipo_generales> cat_tipo_generales { get; set; }
+        //public DbSet<cat_generales> cat_generales { get; set; }
 
         protected async override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -131,7 +131,6 @@ namespace AppDAM10DemoRest.Data
 
                 //      *** LLAVES PRIMARIAS ***     //
                 //PROMOCIONES
-                modelBuilder.Entity<ce_cat_promociones>().HasKey(c  => new { c.IdPromocion});
                 modelBuilder.Entity<zt_cat_almacenes>().HasKey(c => new { c.IdAlmacen });
                 modelBuilder.Entity<zt_inventarios_acumulados>().HasKey(a => new { a.IdInventario, a.IdSKU, a.IdUnidadMedida });
                 modelBuilder.Entity<zt_almacenes_ubicaciones>().HasKey(c => new { c.IdAlmacen, c.IdUbicacion });
@@ -145,6 +144,50 @@ namespace AppDAM10DemoRest.Data
                 modelBuilder.Entity<zt_inventarios_conteos>().HasKey(c => new { c.IdInventario, c.IdSKU, c.IdUnidadMedida, c.IdAlmacen, c.IdUbicacion, c.NumConteo });
 
 
+                //  Llaves Primarias//
+                //Promociones
+                modelBuilder.Entity<ce_cat_promociones>().HasKey(c => new { c.IdPromocion });
+                modelBuilder.Entity<ce_cat_promociones_aplica_a>().HasKey(c => new { c.IdTipoAplicaA });
+                modelBuilder.Entity<ce_cat_promociones_cantidad_fisica>().HasKey(c => new { c.IdPromocion });
+                modelBuilder.Entity<ce_cat_promo_prod_serv>().HasKey(c => new { c.IdProdServ, c.IdPromocion, c.IdPresentacion });
+                //modelBuilder.Entity<cat_tipo_generales>().HasKey(c => new { c.IdTipoGeneral });
+                //modelBuilder.Entity<cat_generales>().HasKey( c => new { c.IdGeneral});
+                //Llaves Foreanas
+                //Promociones
+
+                /*modelBuilder.Entity<ce_cat_promociones>().HasOne(
+                    b => b.cat_tipo_generales).WithMany().HasForeignKey(
+                    d => new { d.IdTipoPromocion });
+                modelBuilder.Entity<ce_cat_promociones>().HasOne(
+                    b => b.cat_generales).WithMany().HasForeignKey(
+                    d => new { d.IdTipoDescuento });//idTipoDescuento*/
+
+                /*modelBuilder.Entity<ce_cat_promociones_aplica_a>().HasOne(
+                    b => b.ce_cat_promociones).WithMany().HasForeignKey(
+                    d => new { d.IdPromocion });
+                modelBuilder.Entity<ce_cat_promociones_aplica_a>().HasOne(
+                    b => b.cat_tipo_generales).WithMany().HasForeignKey(
+                    d => new { d.IdTipoAplicaA });*/
+
+                modelBuilder.Entity<ce_cat_promociones_cantidad_fisica>().HasOne(
+                    b => b.ce_cat_promociones).WithMany().HasForeignKey(
+                    d => new { d.IdPromocion });
+                /*modelBuilder.Entity<ce_cat_promociones_cantidad_fisica>().HasOne(
+                    b => b.cat_tipo_generales).WithMany().HasForeignKey(
+                    d => new { d.idTipoDescuento });*/
+
+                modelBuilder.Entity<ce_cat_promo_prod_serv>().HasOne(
+                    b => b.ce_cat_promociones).WithMany().HasForeignKey(
+                    d => new { d.IdPromocion });
+
+                /*modelBuilder.Entity<ce_cat_promo_prod_serv>().HasOne(
+                    b => b.cat_generales).WithMany().HasForeignKey(
+                    d => new { d.IdProdServ });
+
+                modelBuilder.Entity<ce_cat_promo_prod_serv>().HasOne(
+                    b => b.cat_tipo_generales).WithMany().HasForeignKey(
+                    d => new { d.IdPresentacion });*/
+               
             }
 
             catch (Exception e)
@@ -155,3 +198,7 @@ namespace AppDAM10DemoRest.Data
         }
     }
 }
+
+
+
+

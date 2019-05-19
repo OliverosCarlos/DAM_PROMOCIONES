@@ -157,7 +157,7 @@ namespace AppDAM10DemoRest.Controllers
         (
             [FromForm]string idpromocion, 
             [FromForm]string  descpromocion, 
-            [FromForm]DateTime fechaExpiraini, 
+            [FromForm]DateTime fechaexpiraini, 
             [FromForm]DateTime fechaexpirafin, 
             [FromForm]string valor, 
             [FromForm]char activo, 
@@ -171,7 +171,7 @@ namespace AppDAM10DemoRest.Controllers
             ce_cat_promociones promocion = new ce_cat_promociones();
             promocion.IdPromocion = idpromocion;
             promocion.DesPromocion = descpromocion;
-            promocion.FechaExpiraIni = fechaExpiraini;
+            promocion.FechaExpiraIni = fechaexpiraini;
             promocion.FechaExpiraFin = fechaexpirafin;
             promocion.Valor = valor;
             promocion.Activo = activo;
@@ -209,7 +209,7 @@ namespace AppDAM10DemoRest.Controllers
         (
             [FromForm]string idpromocion,
             [FromForm]string descpromocion,
-            [FromForm]DateTime fechaExpiraini,
+            [FromForm]DateTime fechaexpiraini,
             [FromForm]DateTime fechaexpirafin,
             [FromForm]string valor,
             [FromForm]char activo,
@@ -225,7 +225,7 @@ namespace AppDAM10DemoRest.Controllers
                 var promocion = FicLoDBContext.ce_cat_promociones.First(a => a.IdPromocion == idpromocion);
                 promocion.IdPromocion = idpromocion;
                 promocion.DesPromocion = descpromocion;
-                promocion.FechaExpiraIni = fechaExpiraini;
+                promocion.FechaExpiraIni = fechaexpiraini;
                 promocion.FechaExpiraFin = fechaexpirafin;
                 promocion.Valor = valor;
                 promocion.Activo = activo;
@@ -246,9 +246,9 @@ namespace AppDAM10DemoRest.Controllers
         }
 
         //RUTAS PROMOCIONES APLICA A ===================================================================================
-
+        
         [HttpGet]
-        [Route("/api/promociones-aplica-a")]
+        [Route("/api/promociones-aplica-a/one")]
         public async Task<IActionResult> FicApiGetListPromocionesAplicaA([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
         {
 
@@ -362,7 +362,7 @@ namespace AppDAM10DemoRest.Controllers
         //RUTAS PROMOCIONES CANTIDAD FISICA ===================================================================================
 
         [HttpGet]
-        [Route("/api/promociones-cantidad-fisica")]
+        [Route("/api/promociones-cantidad-fisica/one")]
         public async Task<IActionResult> FicApiGetListPromocionesCantidadFisica([FromQuery]string idpromocion)
         {
 
@@ -405,7 +405,7 @@ namespace AppDAM10DemoRest.Controllers
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
             [FromForm]string usuarioreg,
-            [FromForm]short idtipodescuento
+            [FromForm]int idtipodescuento
         )
         {
             ce_cat_promociones_cantidad_fisica promocion_cantidad_fisica= new ce_cat_promociones_cantidad_fisica();
@@ -477,10 +477,10 @@ namespace AppDAM10DemoRest.Controllers
             }
         }
         //RUTAS PROMO PROD SERV ===================================================================================
-
+        
         [HttpGet]
-        [Route("/api/promo-prod-serv")]
-        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
+        [Route("/api/promo-prod-serv/one")]
+        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]int idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion )
         {
             var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv where data_promoprodserv.IdPromocion == idpromocion && data_promoprodserv.IdProdServ == idprodserv && data_promoprodserv.IdPresentacion == idpresentacion select data_promoprodserv).ToList();
             if (ce_promo_prod_serv.Count() > 0)
@@ -515,8 +515,8 @@ namespace AppDAM10DemoRest.Controllers
         public async Task<IActionResult> FicApiNewPromocionesProdServ
         (
             [FromForm]int idprodserv,
-            [FromForm]string idpromocion,
             [FromForm]string idpresentacion,
+            [FromForm]string idpromocion,
             [FromForm]char activo,
             [FromForm]char borrado,
             [FromForm]DateTime fechareg,
@@ -537,7 +537,7 @@ namespace AppDAM10DemoRest.Controllers
         }
         [HttpDelete]
         [Route("/api/promo-prod-serv")]
-        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]string idpromocion, [FromQuery]int idprodserv, [FromQuery]string idpresentacion)
+        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]int idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion)
         {
             ce_cat_promo_prod_serv promo_prod_serv = new ce_cat_promo_prod_serv();
             promo_prod_serv.IdProdServ = idprodserv;
@@ -590,7 +590,7 @@ namespace AppDAM10DemoRest.Controllers
                 return Ok(err);
             }
         }
-        //RUTAS TIPO GENERALES ===================================================================================
+       /* //RUTAS TIPO GENERALES ===================================================================================
 
         [HttpGet]
         [Route("/api/tipo-generales")]
@@ -808,6 +808,6 @@ namespace AppDAM10DemoRest.Controllers
                 err.Add("err", "No se encontraron registros");
                 return Ok(err);
             }
-        }
+        }*/
     }
 }
