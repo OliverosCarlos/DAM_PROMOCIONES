@@ -20,7 +20,6 @@ namespace PROMOCIONES.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
             LoadApplication(new PROMOCIONES.App());
         }
     }

@@ -6,6 +6,6 @@ namespace PROMOCIONES
 {
     public class FicAppSettings
     {
-        public static string FicUrlBase { get => "http://localhost::5001/"; set { } }
+        public static string FicUrlBase { get => "http://localhost:5000/"; set { } }
     }
 }

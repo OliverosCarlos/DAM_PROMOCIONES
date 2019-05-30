@@ -1,32 +1,22 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PROMOCIONES.Services.Promociones;
+using PROMOCIONES.views;
+using Syncfusion.SfDataGrid.XForms;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PROMOCIONES
 {
     public partial class App : Application
     {
+
+        FicSrvPromocionesList ficSrvPromocionesList;
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
     }
 }

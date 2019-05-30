@@ -209,12 +209,12 @@ namespace AppDAM10DemoRest.Controllers
         (
             [FromForm]string idpromocion,
             [FromForm]string descpromocion,
-            [FromForm]DateTime fechaexpiraini,
-            [FromForm]DateTime fechaexpirafin,
+            //[FromForm]DateTime fechaexpiraini,
+            //[FromForm]DateTime fechaexpirafin,
             [FromForm]string valor,
             [FromForm]char activo,
             [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
+            //[FromForm]DateTime fechaultmod,
             [FromForm]string usuariomod,
             [FromForm]int idtipopromo,
             [FromForm]int idtipodescuento
@@ -225,12 +225,12 @@ namespace AppDAM10DemoRest.Controllers
                 var promocion = FicLoDBContext.ce_cat_promociones.First(a => a.IdPromocion == idpromocion);
                 promocion.IdPromocion = idpromocion;
                 promocion.DesPromocion = descpromocion;
-                promocion.FechaExpiraIni = fechaexpiraini;
-                promocion.FechaExpiraFin = fechaexpirafin;
+              //  promocion.FechaExpiraIni = fechaexpiraini;
+               // promocion.FechaExpiraFin = fechaexpirafin;
                 promocion.Valor = valor;
                 promocion.Activo = activo;
                 promocion.Borrado = borrado;
-                promocion.FechaUltMod = fechaultmod;
+              //  promocion.FechaUltMod = fechaultmod;
                 promocion.UsuarioMod = usuariomod;
                 promocion.IdTipoPromocion = idtipopromo;
                 promocion.IdTipoDescuento = idtipodescuento;
@@ -332,7 +332,7 @@ namespace AppDAM10DemoRest.Controllers
             [FromForm]int idtipoaplicaa,
             [FromForm]char activo,
             [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
+            //[FromForm]DateTime fechaultmod,
             [FromForm]string usuariomod,
             [FromForm]string idpromocion,
             [FromForm]string valor
@@ -344,7 +344,7 @@ namespace AppDAM10DemoRest.Controllers
                 promocion_aplica_a.IdTipoAplicaA = idtipoaplicaa;
                 promocion_aplica_a.Activo = activo;
                 promocion_aplica_a.Borrado = borrado;
-                promocion_aplica_a.FechaUltMod = fechaultmod;
+                //promocion_aplica_a.FechaUltMod = fechaultmod;
                 promocion_aplica_a.UsuarioMod = usuariomod;
                 promocion_aplica_a.IdPromocion = idpromocion;
                 promocion_aplica_a.Valor = valor;

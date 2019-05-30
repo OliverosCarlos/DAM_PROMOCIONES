@@ -26,6 +26,87 @@ namespace PROMOCIONES.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::PROMOCIONES.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::PROMOCIONES.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.allowNull = global::PROMOCIONES.Droid.Resource.Attribute.allowNull;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.borderColor = global::PROMOCIONES.Droid.Resource.Attribute.borderColor;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.culture = global::PROMOCIONES.Droid.Resource.Attribute.culture;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.enableGroupSeparator = global::PROMOCIONES.Droid.Resource.Attribute.enableGroupSeparator;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.fontSize = global::PROMOCIONES.Droid.Resource.Attribute.fontSize;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.maximumDecimalDigits = global::PROMOCIONES.Droid.Resource.Attribute.maximumDecimalDigits;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.numberFormat = global::PROMOCIONES.Droid.Resource.Attribute.numberFormat;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.numericTextBoxValue = global::PROMOCIONES.Droid.Resource.Attribute.numericTextBoxValue;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.parsingMode = global::PROMOCIONES.Droid.Resource.Attribute.parsingMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.percentDisplayMode = global::PROMOCIONES.Droid.Resource.Attribute.percentDisplayMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.selectAllOnFocus = global::PROMOCIONES.Droid.Resource.Attribute.selectAllOnFocus;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.valueChangeMode = global::PROMOCIONES.Droid.Resource.Attribute.valueChangeMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.watermark = global::PROMOCIONES.Droid.Resource.Attribute.watermark;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Attribute.watermarkColor = global::PROMOCIONES.Droid.Resource.Attribute.watermarkColor;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Drawable.inputlayout_togglecollapseicon = global::PROMOCIONES.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Drawable.inputlayout_togglevisibleicon = global::PROMOCIONES.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.compute = global::PROMOCIONES.Droid.Resource.Id.compute;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.decimalMode = global::PROMOCIONES.Droid.Resource.Id.decimalMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.doubleMode = global::PROMOCIONES.Droid.Resource.Id.doubleMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.onKeyFocus = global::PROMOCIONES.Droid.Resource.Id.onKeyFocus;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.onLostFocus = global::PROMOCIONES.Droid.Resource.Id.onLostFocus;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Id.value = global::PROMOCIONES.Droid.Resource.Id.value;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Layout.ScrollViewer = global::PROMOCIONES.Droid.Resource.Layout.ScrollViewer;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.cancel_drop = global::PROMOCIONES.Droid.Resource.String.cancel_drop;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.drop_above = global::PROMOCIONES.Droid.Resource.String.drop_above;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.drop_below = global::PROMOCIONES.Droid.Resource.String.drop_below;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.library_name = global::PROMOCIONES.Droid.Resource.String.library_name;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.String.load_more_items = global::PROMOCIONES.Droid.Resource.String.load_more_items;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_allowNull = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_allowNull;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_borderColor = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_borderColor;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_culture = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_culture;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_enableGroupSeparator = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_enableGroupSeparator;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_fontSize = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_fontSize;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_numberFormat = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_numberFormat;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_numericTextBoxValue = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_numericTextBoxValue;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_parsingMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_parsingMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_percentDisplayMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_percentDisplayMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_selectAllOnFocus = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_selectAllOnFocus;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_watermark = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_watermark;
+			global::Syncfusion.SfDataGrid.XForms.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.allowNull = global::PROMOCIONES.Droid.Resource.Attribute.allowNull;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.borderColor = global::PROMOCIONES.Droid.Resource.Attribute.borderColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.culture = global::PROMOCIONES.Droid.Resource.Attribute.culture;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.enableGroupSeparator = global::PROMOCIONES.Droid.Resource.Attribute.enableGroupSeparator;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.fontSize = global::PROMOCIONES.Droid.Resource.Attribute.fontSize;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.maximumDecimalDigits = global::PROMOCIONES.Droid.Resource.Attribute.maximumDecimalDigits;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.numberFormat = global::PROMOCIONES.Droid.Resource.Attribute.numberFormat;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.numericTextBoxValue = global::PROMOCIONES.Droid.Resource.Attribute.numericTextBoxValue;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.parsingMode = global::PROMOCIONES.Droid.Resource.Attribute.parsingMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.percentDisplayMode = global::PROMOCIONES.Droid.Resource.Attribute.percentDisplayMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.selectAllOnFocus = global::PROMOCIONES.Droid.Resource.Attribute.selectAllOnFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.valueChangeMode = global::PROMOCIONES.Droid.Resource.Attribute.valueChangeMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.watermark = global::PROMOCIONES.Droid.Resource.Attribute.watermark;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.watermarkColor = global::PROMOCIONES.Droid.Resource.Attribute.watermarkColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.compute = global::PROMOCIONES.Droid.Resource.Id.compute;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.decimalMode = global::PROMOCIONES.Droid.Resource.Id.decimalMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.doubleMode = global::PROMOCIONES.Droid.Resource.Id.doubleMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.onKeyFocus = global::PROMOCIONES.Droid.Resource.Id.onKeyFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.onLostFocus = global::PROMOCIONES.Droid.Resource.Id.onLostFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.value = global::PROMOCIONES.Droid.Resource.Id.value;
+			global::Com.Syncfusion.Numerictextbox.Resource.String.library_name = global::PROMOCIONES.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_allowNull = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_allowNull;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_borderColor = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_borderColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_culture = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_culture;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_enableGroupSeparator = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_enableGroupSeparator;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_fontSize = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_fontSize;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_numberFormat = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_numberFormat;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_numericTextBoxValue = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_numericTextBoxValue;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_parsingMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_parsingMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_percentDisplayMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_percentDisplayMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_selectAllOnFocus = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_selectAllOnFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_valueChangeMode = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermark = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_watermark;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermarkColor = global::PROMOCIONES.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::PROMOCIONES.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -223,6 +304,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F040026
 			public const int alertDialogTheme = 2130968614;
 			
+			// aapt resource value: 0x7F090011
+			public const int allowNull = 2131296273;
+			
 			// aapt resource value: 0x7F040027
 			public const int allowStacking = 2130968615;
 			
@@ -288,6 +372,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F04003C
 			public const int behavior_skipCollapsed = 2130968636;
+			
+			// aapt resource value: 0x7F090012
+			public const int borderColor = 2131296274;
 			
 			// aapt resource value: 0x7F04003E
 			public const int borderlessButtonStyle = 2130968638;
@@ -466,6 +553,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F04006C
 			public const int counterTextAppearance = 2130968684;
 			
+			// aapt resource value: 0x7F090014
+			public const int culture = 2131296276;
+			
 			// aapt resource value: 0x7F04006D
 			public const int customNavigationLayout = 2130968685;
 			
@@ -516,6 +606,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F04007D
 			public const int elevation = 2130968701;
+			
+			// aapt resource value: 0x7F090005
+			public const int enableGroupSeparator = 2131296261;
 			
 			// aapt resource value: 0x7F04007E
 			public const int errorEnabled = 2130968702;
@@ -594,6 +687,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F040007
 			public const int fontProviderQuery = 2130968583;
+			
+			// aapt resource value: 0x7F090010
+			public const int fontSize = 2131296272;
 			
 			// aapt resource value: 0x7F040008
 			public const int fontStyle = 2130968584;
@@ -760,6 +856,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F0400CD
 			public const int maxButtonHeight = 2130968781;
 			
+			// aapt resource value: 0x7F090008
+			public const int maximumDecimalDigits = 2131296264;
+			
 			// aapt resource value: 0x7F0400CE
 			public const int measureWithLargestChild = 2130968782;
 			
@@ -817,8 +916,14 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F0400D3
 			public const int navigationMode = 2130968787;
 			
+			// aapt resource value: 0x7F090006
+			public const int numberFormat = 2131296262;
+			
 			// aapt resource value: 0x7F0400D4
 			public const int numericModifiers = 2130968788;
+			
+			// aapt resource value: 0x7F090015
+			public const int numericTextBoxValue = 2131296277;
 			
 			// aapt resource value: 0x7F0400D5
 			public const int overlapAnchor = 2130968789;
@@ -844,6 +949,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F0400DC
 			public const int panelMenuListWidth = 2130968796;
 			
+			// aapt resource value: 0x7F090002
+			public const int parsingMode = 2131296258;
+			
 			// aapt resource value: 0x7F0400DD
 			public const int passwordToggleContentDescription = 2130968797;
 			
@@ -858,6 +966,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0400E1
 			public const int passwordToggleTintMode = 2130968801;
+			
+			// aapt resource value: 0x7F090003
+			public const int percentDisplayMode = 2131296259;
 			
 			// aapt resource value: 0x7F0400E2
 			public const int popupMenuStyle = 2130968802;
@@ -927,6 +1038,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0400F8
 			public const int selectableItemBackgroundBorderless = 2130968824;
+			
+			// aapt resource value: 0x7F090009
+			public const int selectAllOnFocus = 2131296265;
 			
 			// aapt resource value: 0x7F0400F9
 			public const int showAsAction = 2130968825;
@@ -1189,8 +1303,17 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F04014F
 			public const int useCompatPadding = 2130968911;
 			
+			// aapt resource value: 0x7F090004
+			public const int valueChangeMode = 2131296260;
+			
 			// aapt resource value: 0x7F040150
 			public const int voiceIcon = 2130968912;
+			
+			// aapt resource value: 0x7F090007
+			public const int watermark = 2131296263;
+			
+			// aapt resource value: 0x7F090013
+			public const int watermarkColor = 2131296275;
 			
 			// aapt resource value: 0x7F040151
 			public const int windowActionBar = 2130968913;
@@ -2894,6 +3017,12 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
+			// aapt resource value: 0x7F060002
+			public const int inputlayout_togglecollapseicon = 2131099650;
+			
+			// aapt resource value: 0x7F060003
+			public const int inputlayout_togglevisibleicon = 2131099651;
+			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;
 			
@@ -3105,6 +3234,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F0C0008
 			public const int chronometer = 2131492872;
 			
+			// aapt resource value: 0x7F010006
+			public const int compute = 2130771974;
+			
 			// aapt resource value: 0x7F0C0020
 			public const int container = 2131492896;
 			
@@ -3119,6 +3251,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0C0024
 			public const int customPanel = 2131492900;
+			
+			// aapt resource value: 0x7F010004
+			public const int decimalMode = 2130771972;
 			
 			// aapt resource value: 0x7F0C0025
 			public const int decor_content_parent = 2131492901;
@@ -3140,6 +3275,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0C002B
 			public const int design_navigation_view = 2131492907;
+			
+			// aapt resource value: 0x7F010005
+			public const int doubleMode = 2130771973;
 			
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
@@ -3314,6 +3452,12 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0C0013
 			public const int notification_main_column_container = 2131492883;
+			
+			// aapt resource value: 0x7F010009
+			public const int onKeyFocus = 2130771977;
+			
+			// aapt resource value: 0x7F010008
+			public const int onLostFocus = 2130771976;
 			
 			// aapt resource value: 0x7F0C004D
 			public const int parallax = 2131492941;
@@ -3515,6 +3659,9 @@ namespace PROMOCIONES.Droid
 			
 			// aapt resource value: 0x7F0C008D
 			public const int up = 2131493005;
+			
+			// aapt resource value: 0x7F010007
+			public const int value = 2130771975;
 			
 			// aapt resource value: 0x7F0C008E
 			public const int view_offset_helper = 2131493006;
@@ -3795,6 +3942,9 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F0F0006
 			public const int notification_template_part_time = 2131689478;
 			
+			// aapt resource value: 0x7F020004
+			public const int ScrollViewer = 2130837508;
+			
 			// aapt resource value: 0x7F0F0038
 			public const int select_dialog_item_material = 2131689528;
 			
@@ -3944,8 +4094,23 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x7F15001F
 			public const int bottom_sheet_behavior = 2132082719;
 			
+			// aapt resource value: 0x7F070004
+			public const int cancel_drop = 2131165188;
+			
 			// aapt resource value: 0x7F150020
 			public const int character_counter_pattern = 2132082720;
+			
+			// aapt resource value: 0x7F070005
+			public const int drop_above = 2131165189;
+			
+			// aapt resource value: 0x7F070006
+			public const int drop_below = 2131165190;
+			
+			// aapt resource value: 0x7F070002
+			public const int library_name = 2131165186;
+			
+			// aapt resource value: 0x7F070003
+			public const int load_more_items = 2131165187;
 			
 			// aapt resource value: 0x7F15001E
 			public const int mr_button_content_description = 2132082718;
@@ -5297,11 +5462,11 @@ namespace PROMOCIONES.Droid
 			public static int[] ActionBarLayout = new int[] {
 					16842931};
 			
-			// aapt resource value: 0x7F060047
-			public const int ActionBarLayout_android_layout_gravity = 2131099719;
+			// aapt resource value: 0x7F080062
+			public const int ActionBarLayout_android_layout_gravity = 2131230818;
 			
-			// aapt resource value: 0x7F060017
-			public const int ActionBar_background = 2131099671;
+			// aapt resource value: 0x7F080032
+			public const int ActionBar_background = 2131230770;
 			
 			// aapt resource value: 0x1
 			public const int ActionBar_backgroundSplit = 1;
@@ -5390,8 +5555,8 @@ namespace PROMOCIONES.Droid
 			public static int[] ActionMenuItemView = new int[] {
 					16843071};
 			
-			// aapt resource value: 0x7F060049
-			public const int ActionMenuItemView_android_minWidth = 2131099721;
+			// aapt resource value: 0x7F080064
+			public const int ActionMenuItemView_android_minWidth = 2131230820;
 			
 			public static int[] ActionMode = new int[] {
 					2130968626,
@@ -5401,8 +5566,8 @@ namespace PROMOCIONES.Droid
 					2130968847,
 					2130968901};
 			
-			// aapt resource value: 0x7F060051
-			public const int ActionMode_background = 2131099729;
+			// aapt resource value: 0x7F080066
+			public const int ActionMode_background = 2131230822;
 			
 			// aapt resource value: 0x1
 			public const int ActionMode_backgroundSplit = 1;
@@ -5423,8 +5588,8 @@ namespace PROMOCIONES.Droid
 					2130968704,
 					2130968746};
 			
-			// aapt resource value: 0x7F060058
-			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131099736;
+			// aapt resource value: 0x7F080073
+			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131230835;
 			
 			// aapt resource value: 0x1
 			public const int ActivityChooserView_initialActivityCount = 1;
@@ -5438,8 +5603,8 @@ namespace PROMOCIONES.Droid
 					2130968828,
 					2130968829};
 			
-			// aapt resource value: 0x7F060061
-			public const int AlertDialog_android_layout = 2131099745;
+			// aapt resource value: 0x7F080076
+			public const int AlertDialog_android_layout = 2131230838;
 			
 			// aapt resource value: 0x1
 			public const int AlertDialog_buttonPanelSideLayout = 1;
@@ -5470,14 +5635,14 @@ namespace PROMOCIONES.Droid
 					2130968838,
 					2130968839};
 			
-			// aapt resource value: 0x7F060075
-			public const int AppBarLayoutStates_state_collapsed = 2131099765;
+			// aapt resource value: 0x7F080090
+			public const int AppBarLayoutStates_state_collapsed = 2131230864;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayoutStates_state_collapsible = 1;
 			
-			// aapt resource value: 0x7F060069
-			public const int AppBarLayout_android_background = 2131099753;
+			// aapt resource value: 0x7F080084
+			public const int AppBarLayout_android_background = 2131230852;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_android_keyboardNavigationCluster = 1;
@@ -5495,8 +5660,8 @@ namespace PROMOCIONES.Droid
 					2130968765,
 					2130968766};
 			
-			// aapt resource value: 0x7F060078
-			public const int AppBarLayout_Layout_layout_scrollFlags = 2131099768;
+			// aapt resource value: 0x7F080093
+			public const int AppBarLayout_Layout_layout_scrollFlags = 2131230867;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_Layout_layout_scrollInterpolator = 1;
@@ -5507,8 +5672,8 @@ namespace PROMOCIONES.Droid
 					2130968889,
 					2130968890};
 			
-			// aapt resource value: 0x7F060081
-			public const int AppCompatImageView_android_src = 2131099777;
+			// aapt resource value: 0x7F080096
+			public const int AppCompatImageView_android_src = 2131230870;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatImageView_srcCompat = 1;
@@ -5525,8 +5690,8 @@ namespace PROMOCIONES.Droid
 					2130968887,
 					2130968888};
 			
-			// aapt resource value: 0x7F060086
-			public const int AppCompatSeekBar_android_thumb = 2131099782;
+			// aapt resource value: 0x7F080101
+			public const int AppCompatSeekBar_android_thumb = 2131230977;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatSeekBar_tickMark = 1;
@@ -5546,8 +5711,8 @@ namespace PROMOCIONES.Droid
 					16843117,
 					16842804};
 			
-			// aapt resource value: 0x7F060091
-			public const int AppCompatTextHelper_android_drawableBottom = 2131099793;
+			// aapt resource value: 0x7F080106
+			public const int AppCompatTextHelper_android_drawableBottom = 2131230982;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextHelper_android_drawableEnd = 1;
@@ -5577,8 +5742,8 @@ namespace PROMOCIONES.Droid
 					2130968720,
 					2130968869};
 			
-			// aapt resource value: 0x7F060099
-			public const int AppCompatTextView_android_textAppearance = 2131099801;
+			// aapt resource value: 0x7F080114
+			public const int AppCompatTextView_android_textAppearance = 2131230996;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextView_autoSizeMaxTextSize = 1;
@@ -5722,8 +5887,8 @@ namespace PROMOCIONES.Droid
 					2130968921,
 					2130968922};
 			
-			// aapt resource value: 0x7F060108
-			public const int AppCompatTheme_actionBarDivider = 2131099912;
+			// aapt resource value: 0x7F080123
+			public const int AppCompatTheme_actionBarDivider = 2131231011;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTheme_actionBarItemBackground = 1;
@@ -6086,8 +6251,8 @@ namespace PROMOCIONES.Droid
 					2130968753,
 					2130968783};
 			
-			// aapt resource value: 0x7F060228
-			public const int BottomNavigationView_elevation = 2131100200;
+			// aapt resource value: 0x7F080243
+			public const int BottomNavigationView_elevation = 2131231299;
 			
 			// aapt resource value: 0x1
 			public const int BottomNavigationView_itemBackground = 1;
@@ -6106,8 +6271,8 @@ namespace PROMOCIONES.Droid
 					2130968635,
 					2130968636};
 			
-			// aapt resource value: 0x7F060234
-			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131100212;
+			// aapt resource value: 0x7F080249
+			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131231305;
 			
 			// aapt resource value: 0x1
 			public const int BottomSheetBehavior_Layout_behavior_peekHeight = 1;
@@ -6118,8 +6283,8 @@ namespace PROMOCIONES.Droid
 			public static int[] ButtonBarLayout = new int[] {
 					2130968615};
 			
-			// aapt resource value: 0x7F060238
-			public const int ButtonBarLayout_allowStacking = 2131100216;
+			// aapt resource value: 0x7F080253
+			public const int ButtonBarLayout_allowStacking = 2131231315;
 			
 			public static int[] CardView = new int[] {
 					16843072,
@@ -6136,8 +6301,8 @@ namespace PROMOCIONES.Droid
 					2130968586,
 					2130968587};
 			
-			// aapt resource value: 0x7F060541
-			public const int CardView_android_minHeight = 2131100993;
+			// aapt resource value: 0x7F080556
+			public const int CardView_android_minHeight = 2131232086;
 			
 			// aapt resource value: 0x1
 			public const int CardView_android_minWidth = 1;
@@ -6193,8 +6358,8 @@ namespace PROMOCIONES.Droid
 					2130968892,
 					2130968902};
 			
-			// aapt resource value: 0x7F060240
-			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131100224;
+			// aapt resource value: 0x7F080255
+			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131231317;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_collapsedTitleTextAppearance = 1;
@@ -6227,8 +6392,8 @@ namespace PROMOCIONES.Droid
 					2130968760,
 					2130968761};
 			
-			// aapt resource value: 0x7F060257
-			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131100247;
+			// aapt resource value: 0x7F080272
+			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131231346;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = 1;
@@ -6256,8 +6421,8 @@ namespace PROMOCIONES.Droid
 					16843551,
 					16843173};
 			
-			// aapt resource value: 0x7F060260
-			public const int ColorStateListItem_alpha = 2131100256;
+			// aapt resource value: 0x7F080275
+			public const int ColorStateListItem_alpha = 2131231349;
 			
 			// aapt resource value: 0x1
 			public const int ColorStateListItem_android_alpha = 1;
@@ -6270,8 +6435,8 @@ namespace PROMOCIONES.Droid
 					2130968650,
 					2130968651};
 			
-			// aapt resource value: 0x7F060264
-			public const int CompoundButton_android_button = 2131100260;
+			// aapt resource value: 0x7F080279
+			public const int CompoundButton_android_button = 2131231353;
 			
 			// aapt resource value: 0x1
 			public const int CompoundButton_buttonTint = 1;
@@ -6283,8 +6448,8 @@ namespace PROMOCIONES.Droid
 					2130968754,
 					2130968840};
 			
-			// aapt resource value: 0x7F060268
-			public const int CoordinatorLayout_keylines = 2131100264;
+			// aapt resource value: 0x7F080283
+			public const int CoordinatorLayout_keylines = 2131231363;
 			
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
@@ -6295,8 +6460,8 @@ namespace PROMOCIONES.Droid
 					2130968763,
 					2130968764};
 			
-			// aapt resource value: 0x7F060271
-			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131100273;
+			// aapt resource value: 0x7F080286
+			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131231366;
 			
 			// aapt resource value: 0x1
 			public const int CoordinatorLayout_Layout_layout_anchor = 1;
@@ -6324,8 +6489,8 @@ namespace PROMOCIONES.Droid
 					2130968640,
 					2130968879};
 			
-			// aapt resource value: 0x7F060279
-			public const int DesignTheme_bottomSheetDialogTheme = 2131100281;
+			// aapt resource value: 0x7F080294
+			public const int DesignTheme_bottomSheetDialogTheme = 2131231380;
 			
 			// aapt resource value: 0x1
 			public const int DesignTheme_bottomSheetStyle = 1;
@@ -6343,8 +6508,8 @@ namespace PROMOCIONES.Droid
 					2130968831,
 					2130968882};
 			
-			// aapt resource value: 0x7F060283
-			public const int DrawerArrowToggle_arrowHeadLength = 2131100291;
+			// aapt resource value: 0x7F080298
+			public const int DrawerArrowToggle_arrowHeadLength = 2131231384;
 			
 			// aapt resource value: 0x1
 			public const int DrawerArrowToggle_arrowShaftLength = 1;
@@ -6377,8 +6542,8 @@ namespace PROMOCIONES.Droid
 					2130968816,
 					2130968911};
 			
-			// aapt resource value: 0x7F060292
-			public const int FloatingActionButton_backgroundTint = 2131100306;
+			// aapt resource value: 0x7F080307
+			public const int FloatingActionButton_backgroundTint = 2131231495;
 			
 			// aapt resource value: 0x1
 			public const int FloatingActionButton_backgroundTintMode = 1;
@@ -6386,8 +6551,8 @@ namespace PROMOCIONES.Droid
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
 					2130968632};
 			
-			// aapt resource value: 0x7F060301
-			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131100417;
+			// aapt resource value: 0x7F080316
+			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131231510;
 			
 			// aapt resource value: 0x2
 			public const int FloatingActionButton_borderWidth = 2;
@@ -6423,8 +6588,8 @@ namespace PROMOCIONES.Droid
 					2130968584,
 					2130968585};
 			
-			// aapt resource value: 0x7F060010
-			public const int FontFamilyFont_android_font = 2131099664;
+			// aapt resource value: 0x7F080025
+			public const int FontFamilyFont_android_font = 2131230757;
 			
 			// aapt resource value: 0x1
 			public const int FontFamilyFont_android_fontStyle = 1;
@@ -6441,8 +6606,8 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x5
 			public const int FontFamilyFont_fontWeight = 5;
 			
-			// aapt resource value: 0x7F060003
-			public const int FontFamily_fontProviderAuthority = 2131099651;
+			// aapt resource value: 0x7F080018
+			public const int FontFamily_fontProviderAuthority = 2131230744;
 			
 			// aapt resource value: 0x1
 			public const int FontFamily_fontProviderCerts = 1;
@@ -6464,8 +6629,8 @@ namespace PROMOCIONES.Droid
 					16843264,
 					2130968729};
 			
-			// aapt resource value: 0x7F060303
-			public const int ForegroundLinearLayout_android_foreground = 2131100419;
+			// aapt resource value: 0x7F080318
+			public const int ForegroundLinearLayout_android_foreground = 2131231512;
 			
 			// aapt resource value: 0x1
 			public const int ForegroundLinearLayout_android_foregroundGravity = 1;
@@ -6484,8 +6649,8 @@ namespace PROMOCIONES.Droid
 					2130968782,
 					2130968826};
 			
-			// aapt resource value: 0x7F060307
-			public const int LinearLayoutCompat_android_baselineAligned = 2131100423;
+			// aapt resource value: 0x7F080322
+			public const int LinearLayoutCompat_android_baselineAligned = 2131231522;
 			
 			// aapt resource value: 0x1
 			public const int LinearLayoutCompat_android_baselineAlignedChildIndex = 1;
@@ -6511,8 +6676,8 @@ namespace PROMOCIONES.Droid
 					16843137,
 					16842996};
 			
-			// aapt resource value: 0x7F060317
-			public const int LinearLayoutCompat_Layout_android_layout_gravity = 2131100439;
+			// aapt resource value: 0x7F080332
+			public const int LinearLayoutCompat_Layout_android_layout_gravity = 2131231538;
 			
 			// aapt resource value: 0x1
 			public const int LinearLayoutCompat_Layout_android_layout_height = 1;
@@ -6533,8 +6698,8 @@ namespace PROMOCIONES.Droid
 					16843436,
 					16843437};
 			
-			// aapt resource value: 0x7F060322
-			public const int ListPopupWindow_android_dropDownHorizontalOffset = 2131100450;
+			// aapt resource value: 0x7F080337
+			public const int ListPopupWindow_android_dropDownHorizontalOffset = 2131231543;
 			
 			// aapt resource value: 0x1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
@@ -6545,8 +6710,8 @@ namespace PROMOCIONES.Droid
 					2130968688,
 					2130968732};
 			
-			// aapt resource value: 0x7F060555
-			public const int MediaRouteButton_android_minHeight = 2131101013;
+			// aapt resource value: 0x7F080570
+			public const int MediaRouteButton_android_minHeight = 2131232112;
 			
 			// aapt resource value: 0x1
 			public const int MediaRouteButton_android_minWidth = 1;
@@ -6565,8 +6730,8 @@ namespace PROMOCIONES.Droid
 					16843231,
 					16843156};
 			
-			// aapt resource value: 0x7F060325
-			public const int MenuGroup_android_checkableBehavior = 2131100453;
+			// aapt resource value: 0x7F080340
+			public const int MenuGroup_android_checkableBehavior = 2131231552;
 			
 			// aapt resource value: 0x1
 			public const int MenuGroup_android_enabled = 1;
@@ -6608,8 +6773,8 @@ namespace PROMOCIONES.Droid
 					2130968825,
 					2130968907};
 			
-			// aapt resource value: 0x7F060332
-			public const int MenuItem_actionLayout = 2131100466;
+			// aapt resource value: 0x7F080347
+			public const int MenuItem_actionLayout = 2131231559;
 			
 			// aapt resource value: 0x1
 			public const int MenuItem_actionProviderClass = 1;
@@ -6688,8 +6853,8 @@ namespace PROMOCIONES.Droid
 					2130968805,
 					2130968842};
 			
-			// aapt resource value: 0x7F060356
-			public const int MenuView_android_headerBackground = 2131100502;
+			// aapt resource value: 0x7F080371
+			public const int MenuView_android_headerBackground = 2131231601;
 			
 			// aapt resource value: 0x1
 			public const int MenuView_android_horizontalDivider = 1;
@@ -6727,8 +6892,8 @@ namespace PROMOCIONES.Droid
 					2130968753,
 					2130968783};
 			
-			// aapt resource value: 0x7F060366
-			public const int NavigationView_android_background = 2131100518;
+			// aapt resource value: 0x7F080381
+			public const int NavigationView_android_background = 2131231617;
 			
 			// aapt resource value: 0x1
 			public const int NavigationView_android_fitsSystemWindows = 1;
@@ -6765,11 +6930,11 @@ namespace PROMOCIONES.Droid
 			public static int[] PopupWindowBackgroundState = new int[] {
 					2130968837};
 			
-			// aapt resource value: 0x7F060381
-			public const int PopupWindowBackgroundState_state_above_anchor = 2131100545;
+			// aapt resource value: 0x7F080396
+			public const int PopupWindowBackgroundState_state_above_anchor = 2131231638;
 			
-			// aapt resource value: 0x7F060377
-			public const int PopupWindow_android_popupAnimationStyle = 2131100535;
+			// aapt resource value: 0x7F080392
+			public const int PopupWindow_android_popupAnimationStyle = 2131231634;
 			
 			// aapt resource value: 0x1
 			public const int PopupWindow_android_popupBackground = 1;
@@ -6781,8 +6946,8 @@ namespace PROMOCIONES.Droid
 					2130968790,
 					2130968793};
 			
-			// aapt resource value: 0x7F060383
-			public const int RecycleListView_paddingBottomNoButtons = 2131100547;
+			// aapt resource value: 0x7F080398
+			public const int RecycleListView_paddingBottomNoButtons = 2131231640;
 			
 			// aapt resource value: 0x1
 			public const int RecycleListView_paddingTopNoTitle = 1;
@@ -6800,8 +6965,8 @@ namespace PROMOCIONES.Droid
 					2130968830,
 					2130968836};
 			
-			// aapt resource value: 0x7F060386
-			public const int RecyclerView_android_descendantFocusability = 2131100550;
+			// aapt resource value: 0x7F080401
+			public const int RecyclerView_android_descendantFocusability = 2131231745;
 			
 			// aapt resource value: 0x1
 			public const int RecyclerView_android_orientation = 1;
@@ -6836,14 +7001,14 @@ namespace PROMOCIONES.Droid
 			public static int[] ScrimInsetsFrameLayout = new int[] {
 					2130968747};
 			
-			// aapt resource value: 0x7F060398
-			public const int ScrimInsetsFrameLayout_insetForeground = 2131100568;
+			// aapt resource value: 0x7F080413
+			public const int ScrimInsetsFrameLayout_insetForeground = 2131231763;
 			
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
 					2130968634};
 			
-			// aapt resource value: 0x7F060400
-			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 2131100672;
+			// aapt resource value: 0x7F080415
+			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 2131231765;
 			
 			public static int[] SearchView = new int[] {
 					16842970,
@@ -6864,8 +7029,8 @@ namespace PROMOCIONES.Droid
 					2130968848,
 					2130968912};
 			
-			// aapt resource value: 0x7F060402
-			public const int SearchView_android_focusable = 2131100674;
+			// aapt resource value: 0x7F080417
+			public const int SearchView_android_focusable = 2131231767;
 			
 			// aapt resource value: 0x1
 			public const int SearchView_android_imeOptions = 1;
@@ -6915,13 +7080,71 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x16
 			public const int SearchView_voiceIcon = 22;
 			
+			public static int[] SfNumericTextBox = new int[] {
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0,
+					0};
+			
+			// aapt resource value: 0x7F080011
+			public const int SfNumericTextBox_allowNull = 2131230737;
+			
+			// aapt resource value: 0x7F080012
+			public const int SfNumericTextBox_borderColor = 2131230738;
+			
+			// aapt resource value: 0x7F080014
+			public const int SfNumericTextBox_culture = 2131230740;
+			
+			// aapt resource value: 0x7F080005
+			public const int SfNumericTextBox_enableGroupSeparator = 2131230725;
+			
+			// aapt resource value: 0x7F080010
+			public const int SfNumericTextBox_fontSize = 2131230736;
+			
+			// aapt resource value: 0x7F080008
+			public const int SfNumericTextBox_maximumDecimalDigits = 2131230728;
+			
+			// aapt resource value: 0x7F080006
+			public const int SfNumericTextBox_numberFormat = 2131230726;
+			
+			// aapt resource value: 0x7F080015
+			public const int SfNumericTextBox_numericTextBoxValue = 2131230741;
+			
+			// aapt resource value: 0x7F080002
+			public const int SfNumericTextBox_parsingMode = 2131230722;
+			
+			// aapt resource value: 0x7F080003
+			public const int SfNumericTextBox_percentDisplayMode = 2131230723;
+			
+			// aapt resource value: 0x7F080009
+			public const int SfNumericTextBox_selectAllOnFocus = 2131230729;
+			
+			// aapt resource value: 0x7F080004
+			public const int SfNumericTextBox_valueChangeMode = 2131230724;
+			
+			// aapt resource value: 0x7F080007
+			public const int SfNumericTextBox_watermark = 2131230727;
+			
+			// aapt resource value: 0x7F080013
+			public const int SfNumericTextBox_watermarkColor = 2131230739;
+			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
 					2130968701,
 					2130968780};
 			
-			// aapt resource value: 0x7F060420
-			public const int SnackbarLayout_android_maxWidth = 2131100704;
+			// aapt resource value: 0x7F080435
+			public const int SnackbarLayout_android_maxWidth = 2131231797;
 			
 			// aapt resource value: 0x1
 			public const int SnackbarLayout_elevation = 1;
@@ -6936,8 +7159,8 @@ namespace PROMOCIONES.Droid
 					16843131,
 					2130968803};
 			
-			// aapt resource value: 0x7F060424
-			public const int Spinner_android_dropDownWidth = 2131100708;
+			// aapt resource value: 0x7F080439
+			public const int Spinner_android_dropDownWidth = 2131231801;
 			
 			// aapt resource value: 0x1
 			public const int Spinner_android_entries = 1;
@@ -6967,8 +7190,8 @@ namespace PROMOCIONES.Droid
 					2130968909,
 					2130968910};
 			
-			// aapt resource value: 0x7F060430
-			public const int SwitchCompat_android_textOff = 2131100720;
+			// aapt resource value: 0x7F080445
+			public const int SwitchCompat_android_textOff = 2131231813;
 			
 			// aapt resource value: 0x1
 			public const int SwitchCompat_android_textOn = 1;
@@ -7014,8 +7237,8 @@ namespace PROMOCIONES.Droid
 					16842994,
 					16843087};
 			
-			// aapt resource value: 0x7F060445
-			public const int TabItem_android_icon = 2131100741;
+			// aapt resource value: 0x7F080460
+			public const int TabItem_android_icon = 2131231840;
 			
 			// aapt resource value: 0x1
 			public const int TabItem_android_layout = 1;
@@ -7041,8 +7264,8 @@ namespace PROMOCIONES.Droid
 					2130968867,
 					2130968868};
 			
-			// aapt resource value: 0x7F060449
-			public const int TabLayout_tabBackground = 2131100745;
+			// aapt resource value: 0x7F080464
+			public const int TabLayout_tabBackground = 2131231844;
 			
 			// aapt resource value: 0x1
 			public const int TabLayout_tabContentStart = 1;
@@ -7104,8 +7327,8 @@ namespace PROMOCIONES.Droid
 					2130968720,
 					2130968869};
 			
-			// aapt resource value: 0x7F060466
-			public const int TextAppearance_android_fontFamily = 2131100774;
+			// aapt resource value: 0x7F080481
+			public const int TextAppearance_android_fontFamily = 2131231873;
 			
 			// aapt resource value: 0x1
 			public const int TextAppearance_android_shadowColor = 1;
@@ -7161,8 +7384,8 @@ namespace PROMOCIONES.Droid
 					2130968800,
 					2130968801};
 			
-			// aapt resource value: 0x7F060480
-			public const int TextInputLayout_android_hint = 2131100800;
+			// aapt resource value: 0x7F080495
+			public const int TextInputLayout_android_hint = 2131231893;
 			
 			// aapt resource value: 0x1
 			public const int TextInputLayout_android_textColorHint = 1;
@@ -7240,8 +7463,8 @@ namespace PROMOCIONES.Droid
 					2130968899,
 					2130968900};
 			
-			// aapt resource value: 0x7F060497
-			public const int Toolbar_android_gravity = 2131100823;
+			// aapt resource value: 0x7F080512
+			public const int Toolbar_android_gravity = 2131232018;
 			
 			// aapt resource value: 0x1
 			public const int Toolbar_android_minHeight = 1;
@@ -7339,8 +7562,8 @@ namespace PROMOCIONES.Droid
 					2130968629,
 					2130968630};
 			
-			// aapt resource value: 0x7F060533
-			public const int ViewBackgroundHelper_android_background = 2131100979;
+			// aapt resource value: 0x7F080548
+			public const int ViewBackgroundHelper_android_background = 2131232072;
 			
 			// aapt resource value: 0x1
 			public const int ViewBackgroundHelper_backgroundTint = 1;
@@ -7353,8 +7576,8 @@ namespace PROMOCIONES.Droid
 					16842995,
 					16842994};
 			
-			// aapt resource value: 0x7F060537
-			public const int ViewStubCompat_android_id = 2131100983;
+			// aapt resource value: 0x7F080552
+			public const int ViewStubCompat_android_id = 2131232082;
 			
 			// aapt resource value: 0x1
 			public const int ViewStubCompat_android_inflatedId = 1;
@@ -7362,8 +7585,8 @@ namespace PROMOCIONES.Droid
 			// aapt resource value: 0x2
 			public const int ViewStubCompat_android_layout = 2;
 			
-			// aapt resource value: 0x7F060527
-			public const int View_android_focusable = 2131100967;
+			// aapt resource value: 0x7F080542
+			public const int View_android_focusable = 2131232066;
 			
 			// aapt resource value: 0x1
 			public const int View_android_theme = 1;

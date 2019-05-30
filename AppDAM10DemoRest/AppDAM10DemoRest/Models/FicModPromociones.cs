@@ -17,15 +17,15 @@ namespace AppDAM10DemoRest.Models
             public string IdPromocion { get; set; }
             [StringLength(20)]
             public string DesPromocion { get; set; }
-            public DateTime FechaExpiraIni { get; set; }
-            public DateTime FechaExpiraFin { get; set; }
+            public Nullable<DateTime> FechaExpiraIni { get; set; }
+            public Nullable<DateTime> FechaExpiraFin { get; set; }
             [StringLength(20)]
             public string Valor { get; set; }
             [StringLength(1)]
             public char Activo { get; set; }
             [StringLength(1)]
             public char Borrado { get; set; }
-            public Nullable<DateTime> FechaReg { get; set; }
+            public DateTime FechaReg { get; set; }
             [StringLength(20)]
             public string UsuarioReg { get; set; }
             public Nullable<DateTime> FechaUltMod { get; set; }
