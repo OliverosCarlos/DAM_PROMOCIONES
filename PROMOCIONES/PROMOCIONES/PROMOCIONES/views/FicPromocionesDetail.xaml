@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROMOCIONES.views.FicPromocionesDetail">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="IdPromocion:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding IdPromocion}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Descripcion:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding DesPromocion}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha Inicial:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding FechaExpiraIni}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha Final:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding FechaExpiraFin}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Valor:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Valor}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Activo:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Activo}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Borrado:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Borrado}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha Registro:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding FechaReg}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Usuario Registro:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding UsuarioReg}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha Ultima Modificación:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding FechaUltMod}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Usuario Modificación:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding UsuarioMod}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo Promocion:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding IdTipoPromocion}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo Descuento:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding IdTipoDescuento}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <Button x:Name="dismissButton" Text="Dismiss" Clicked="OnDismissButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

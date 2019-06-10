@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROMOCIONES.views.FormUpdatePromocionesPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Descripcion promoción"     FontAttributes="Bold" Grid.Row="1" Grid.Column="0" FontSize="Default" />
+                    <Label Text="Fecha Expiración Inicial"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0" FontSize="Default" />
+                    <Label Text="Fecha Expiración Final"    FontAttributes="Bold" Grid.Row="3" Grid.Column="0" FontSize="Default" />
+                    <Label Text="Valor"     FontAttributes="Bold" Grid.Row="4" Grid.Column="0" FontSize="Default" />
+                    <Label Text="Id Tipo Promocion" FontAttributes="Bold" Grid.Row="5" Grid.Column="0" FontSize="Default" />
+                    <Label Text="Id Tipo Descuento" FontAttributes="Bold" Grid.Row="6" Grid.Column="0" FontSize="Default" />
+
+                    <Entry x:Name="txtDesPromo" Text="{Binding DesPromocion}" Grid.Row="1" Grid.Column="1"></Entry>
+                    <Entry x:Name="txtFechaExpiraIni" Text="{Binding FechaExpiraIni}" Grid.Row="2" Grid.Column="1"></Entry>
+                    <Entry x:Name="txtFechaExpiraFin" Text="{Binding FechaExpiraFin}" Grid.Row="3" Grid.Column="1"></Entry>
+                    <Entry x:Name="txtValor" Text="{Binding Valor}" Grid.Row="4" Grid.Column="1"></Entry>
+                    <Entry x:Name="txtIdTipoPromo" Text="{Binding IdTipoPromocion}" Grid.Row="5" Grid.Column="1"></Entry>
+                    <Entry x:Name="txtIdTipoDescuento" Text="{Binding IdTipoDescuento}" Grid.Row="6" Grid.Column="1"></Entry>
+
+                </Grid>
+
+                <Button Text="Actualizar Promocion" Clicked="updatePromotion"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,13 +10,11 @@ namespace PROMOCIONES
 {
     public partial class App : Application
     {
-
-        FicSrvPromocionesList ficSrvPromocionesList;
+        //FicSrvPromocionesList ficSrvPromocionesList;
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new NavigationPage( new MainPage() );
         }
-
     }
 }

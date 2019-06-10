@@ -39,9 +39,11 @@ namespace AppDAM10DemoRest.Data
         public DbSet<zt_cat_productos> zt_cat_productos { get; set; }
         public DbSet<zt_cat_unidad_medidas> zt_cat_unidad_medidas { get; set; }
         public DbSet<zt_cat_productos_medidas> zt_cat_productos_medidas { get; set; }
-
+        //products
+        public DbSet<ce_cat_prod_serv2> ce_cat_prod_serv2 { get; set; }
 
         //
+
         public DbSet<zt_cat_cedis> zt_cat_cedis { get; set; }
         public DbSet<zt_cat_almacenes> zt_cat_almacenes { get; set; }
         public DbSet<zt_cat_ubicaciones> zt_cat_ubicaciones { get; set; }
@@ -59,6 +61,8 @@ namespace AppDAM10DemoRest.Data
             try
             {
                 //      *** LLAVES PRIMARIAS ***     //
+                //PRODUCTS
+                modelBuilder.Entity<ce_cat_prod_serv2>().HasKey(c => new { c.IdProdServ });
                 //INVENTARIOS
                 modelBuilder.Entity<zt_cat_cedis>().HasKey(c => new { c.IdCEDI });
                 modelBuilder.Entity<zt_cat_almacenes>().HasKey(c => new { c.IdAlmacen });

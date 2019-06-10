@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:SyncFusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"             
+             xmlns:local="clr-namespace:PROMOCIONES"
+             xmlns:local1="clr-namespace:PROMOCIONES.ViewModels.Promociones"
+             x:Class="PROMOCIONES.views.FicListProdServPage">
+
+
+
+        <ContentPage.BindingContext>
+            <local1:FicVmProdServ/>
+        </ContentPage.BindingContext>
+
+    <ScrollView HorizontalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout VerticalOptions="Start" 
+                               HorizontalOptions="FillAndExpand" 
+                               Orientation="Horizontal"          
+                               Padding="10,5,10,5" >
+                <Button Text="Nuevo" ></Button>
+                <Button x:Name="btnAsignaPromo" Text="Asignar Promo" IsEnabled="False"></Button>
+                <Button x:Name="btnEliminar" Text="Eliminar" IsEnabled="False" ></Button>
+                <Button x:Name="btnActualizar" Text="Actualizar" IsEnabled="False" ></Button>
+                <Button x:Name="btnDetalle" Clicked="showDetail" Text="Detalle" IsEnabled="false" ></Button>
+                
+            </StackLayout>
+            <SyncFusion:SfDataGrid x:Name="dataGrid"
+                           ItemsSource="{Binding FicSfDataGrid_ItemSource_ProdServ}"
+                           AllowSorting="True"
+                           AllowTriStateSorting="True"
+                           AllowMultiSorting="True"
+                           ScrollingMode="PixelLine"
+                           VerticalOverScrollMode="None"
+                           ColumnSizer="Star"
+                           AllowDraggingColumn="True"
+                           AllowDraggingRow="True"
+                           SelectionMode="Single"    
+                               >
+
+            </SyncFusion:SfDataGrid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

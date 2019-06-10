@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+             x:Class="PROMOCIONES.views.FormPromocionesPage">
+    <ScrollView>
+    <StackLayout>
+     
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Identificador de promocion" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" FontSize="Default" />
+        <Label Text="Descripcion promoción"     FontAttributes="Bold" Grid.Row="1" Grid.Column="0" FontSize="Default" />
+        <Label Text="Fecha Expiración Inicial"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0" FontSize="Default" />
+        <Label Text="Fecha Expiración Final"    FontAttributes="Bold" Grid.Row="3" Grid.Column="0" FontSize="Default" />
+        <Label Text="Valor"     FontAttributes="Bold" Grid.Row="4" Grid.Column="0" FontSize="Default" />
+        <Label Text="Activo"    FontAttributes="Bold" Grid.Row="5" Grid.Column="0" FontSize="Default" />
+        <Label Text="Borrado"   FontAttributes="Bold" Grid.Row="6" Grid.Column="0" FontSize="Default" />
+        <Label Text="Id Tipo Promocion" FontAttributes="Bold" Grid.Row="7" Grid.Column="0" FontSize="Default" />
+        <Label Text="Id Tipo Descuento" FontAttributes="Bold" Grid.Row="8" Grid.Column="0" FontSize="Default" />
+
+        <Entry x:Name="txtIdPromo"  Placeholder="Identificador de promoción" Grid.Row="0" Grid.Column="1"></Entry>
+        <Entry x:Name="txtDesPromo"  Placeholder="Descripción promoción" Grid.Row="1" Grid.Column="1"></Entry>
+        <Entry x:Name="txtFechaExpiraIni" Placeholder="yyyy-mm-dd" Grid.Row="2" Grid.Column="1"></Entry>
+        <Entry x:Name="txtFechaExpiraFin" Placeholder="yyyy-mm-dd" Grid.Row="3" Grid.Column="1"></Entry>
+        <Entry x:Name="txtValor" Placeholder="valor" Grid.Row="4" Grid.Column="1"></Entry>
+        <Entry x:Name="txtActivo" Placeholder="S/N" Grid.Row="5" Grid.Column="1"></Entry>
+        <Entry x:Name="txtBorrado" Placeholder="S/N" Grid.Row="6" Grid.Column="1"></Entry>
+        <Entry x:Name="txtIdTipoPromo" Placeholder="tipo promocion" Grid.Row="7" Grid.Column="1"></Entry>
+        <Entry x:Name="txtIdTipoDescuento" Placeholder="tipo descuento" Grid.Row="8" Grid.Column="1"></Entry>
+
+    </Grid>
+  
+    <Button Text="Agregar Promocion" Clicked="addPromotion"></Button>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -6,19 +6,41 @@
              xmlns:local1="clr-namespace:PROMOCIONES.ViewModels.Promociones"
              x:Class="PROMOCIONES.MainPage">
 
+    
     <ContentPage.BindingContext>
         <local1:FicVmPromocionesList />
     </ContentPage.BindingContext>
+    
+    <ScrollView HorizontalOptions="FillAndExpand">
     <StackLayout>
+        <StackLayout VerticalOptions="Start" 
+                               HorizontalOptions="FillAndExpand" 
+                               Orientation="Horizontal"          
+                               Padding="10,5,10,5" >
+            <Button x:Name="btnPromoProdServ" Clicked="goToPromoProdServ" Text="PromoProdServ" ></Button>
+            <Button Text="Nuevo" Clicked="Navigate_Button"></Button>
+            <Button x:Name="btnAplicaA" Text="Aplica a" IsEnabled="False"></Button>
+            <Button x:Name="btnEliminar" Clicked="deletePromo" Text="Eliminar" IsEnabled="False" ></Button>
+            <Button x:Name="btnActualizar" Clicked="showUpdatePromo" Text="Actualizar" IsEnabled="False" ></Button>
+            <Button x:Name="btnDetalle" Clicked="showDetail" Text="Detalle" IsEnabled="false" ></Button>
+            <Button x:Name="btnRefrescar" Clicked="refresh" Text="Refrescar" ></Button>
+            <!--<image HorizontalOptions="EndAndExpand" source="yourimage.png"/>-->
+        </StackLayout>
         <SyncFusion:SfDataGrid x:Name="dataGrid"
                            ItemsSource="{Binding FicSfDataGrid_ItemSource_Promociones}"
                            AllowSorting="True"
                            AllowTriStateSorting="True"
                            AllowMultiSorting="True"
+                           ScrollingMode="PixelLine"
                            VerticalOverScrollMode="None"
-                           ColumnSizer="Star">
+                           ColumnSizer="Star"
+                           AllowDraggingColumn="True"
+                           AllowDraggingRow="True"
+                           GridTapped="unlockButtons"
+                           SelectionMode="Single"    
+                               >
 
         </SyncFusion:SfDataGrid>
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>

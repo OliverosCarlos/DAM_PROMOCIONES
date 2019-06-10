@@ -15,14 +15,15 @@ using PROMOCIONES.Services.Promociones;
 
 namespace PROMOCIONES.ViewModels.Promociones
 {
-    public class FicVmPromocionesList
+    public class FicVmPromocionesList: INotifyPropertyChanged
     {
-        public ObservableCollection<ce_cat_promociones> FicSfDataGrid_ItemSource_Promociones { get; set; }
+        public ObservableCollection<grid_promociones> FicSfDataGrid_ItemSource_Promociones { get; set; }
+        public ObservableCollection<ce_cat_promociones> FicAllData_Promociones { get; set; }
         private FicSrvPromocionesList ficSrvPromocionesList = new FicSrvPromocionesList();
 
         public FicVmPromocionesList()
         {
-            this.FicSfDataGrid_ItemSource_Promociones = new ObservableCollection<ce_cat_promociones>();
+            this.FicSfDataGrid_ItemSource_Promociones = new ObservableCollection<grid_promociones>();
             this.llenar();
         }//CONSTRUCTOR
 
@@ -30,14 +31,15 @@ namespace PROMOCIONES.ViewModels.Promociones
             try
             {
                 System.Diagnostics.Debug.WriteLine(" llenando");
-                var source_local_prom = await ficSrvPromocionesList.FicMetGetPromociones();
+                var source_local_prom = await ficSrvPromocionesList.FicMetGetGridPromociones();
                 if (source_local_prom != null)
                 {
                     FicSfDataGrid_ItemSource_Promociones.Clear();
-                    foreach (ce_cat_promociones prom in source_local_prom)
+                    foreach (grid_promociones prom in source_local_prom)
                     {
                         System.Diagnostics.Debug.WriteLine(" msg", prom);
                         FicSfDataGrid_ItemSource_Promociones.Add(prom);
+                        RaisePropertyChanged("FicSfDataGrid_ItemSource_Promociones");
                     }
                 }//LLENAR EL GRID
 
@@ -48,5 +50,15 @@ namespace PROMOCIONES.ViewModels.Promociones
             }
         }
 
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }
+

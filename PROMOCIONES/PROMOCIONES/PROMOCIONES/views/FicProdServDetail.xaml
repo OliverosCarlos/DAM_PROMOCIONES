@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROMOCIONES.views.FicProdServDetail">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="IdProdServ:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Marca:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Modelo:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Activo:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Borrado:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="FechaReg:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="FechaUltMod:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="UsuarioMod:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Puntos X Venta:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Departamento:" FontSize="Medium" HorizontalOptions="FillAndExpand" />
+                <Label Text="" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <Button x:Name="dismissButton" Text="Dismiss" Clicked="OnDismissButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

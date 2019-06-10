@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using AppDAM10DemoRest.Data;
@@ -151,37 +152,61 @@ namespace AppDAM10DemoRest.Controllers
                 return Ok(ce_promociones);
             }
         }
+        [HttpGet]
+        [Route("/api/promociones/grid")]
+        public async Task<IActionResult> FicApiGetGridPromociones()
+        {
+            var ce_promociones = (from data_inv in FicLoDBContext.ce_cat_promociones
+                                  select new { data_inv.IdPromocion, data_inv.DesPromocion,
+                                    data_inv.FechaExpiraIni,data_inv.FechaExpiraFin,
+                                    data_inv.Valor,data_inv.IdTipoDescuento,data_inv.IdTipoPromocion
+                                  }).ToList();
+            if (ce_promociones.Count() > 0)
+            {
+                ce_promociones = ce_promociones.ToList();
+                return Ok(ce_promociones);
+            }
+            else
+            {
+                ce_promociones = ce_promociones.ToList();
+                return Ok(ce_promociones);
+            }
+        }
+        [HttpGet]
+        [Route("/api/promociones/descripcion")]
+        public async Task<IActionResult> FicApiGetListPromocionesDesc()
+        {
+            var ce_promociones = (from data_inv in FicLoDBContext.ce_cat_promociones select data_inv.DesPromocion).ToList();
+            if (ce_promociones.Count() > 0)
+            {
+                ce_promociones = ce_promociones.ToList();
+                return Ok(ce_promociones);
+            }
+            else
+            {
+                ce_promociones = ce_promociones.ToList();
+                return Ok(ce_promociones);
+            }
+        }
         [HttpPost]
         [Route("/api/promociones")]
-        public async Task<IActionResult> FicApiNewPromociones
-        (
-            [FromForm]string idpromocion, 
-            [FromForm]string  descpromocion, 
-            [FromForm]DateTime fechaexpiraini, 
-            [FromForm]DateTime fechaexpirafin, 
-            [FromForm]string valor, 
-            [FromForm]char activo, 
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg,
-            [FromForm]int idtipopromo,
-            [FromForm]int idtipodescuento
-        )
+        public async Task<IActionResult> FicApiNewPromociones( [FromBody] ce_cat_promociones promociones )
         {
+            Debug.WriteLine("aqui: ",promociones);
             ce_cat_promociones promocion = new ce_cat_promociones();
-            promocion.IdPromocion = idpromocion;
-            promocion.DesPromocion = descpromocion;
-            promocion.FechaExpiraIni = fechaexpiraini;
-            promocion.FechaExpiraFin = fechaexpirafin;
-            promocion.Valor = valor;
-            promocion.Activo = activo;
-            promocion.Borrado = borrado;
-            promocion.FechaReg = fechareg;
-            promocion.UsuarioReg = usuarioreg;
-            promocion.IdTipoPromocion = idtipopromo;
-            promocion.IdTipoDescuento = idtipodescuento;
+            promocion.IdPromocion = promociones.IdPromocion;
+            promocion.DesPromocion = promociones.DesPromocion;
+            promocion.FechaExpiraIni = promociones.FechaExpiraIni;
+            promocion.FechaExpiraFin = promociones.FechaExpiraFin;
+            promocion.Valor = promociones.Valor;
+            promocion.Activo = promociones.Activo;
+            promocion.Borrado = promociones.Borrado;
+            promocion.FechaReg = promociones.FechaReg;
+            promocion.UsuarioReg = promociones.UsuarioReg;
+            promocion.IdTipoPromocion = promociones.IdTipoPromocion;
+            promocion.IdTipoDescuento = promociones.IdTipoDescuento;
             FicLoDBContext.ce_cat_promociones.Add(promocion);
-            FicLoDBContext.SaveChanges();
+            await FicLoDBContext.SaveChangesAsync();
             return Ok(promocion);
         }
         [HttpDelete]
@@ -206,34 +231,12 @@ namespace AppDAM10DemoRest.Controllers
         [HttpPut]
         [Route("/api/promociones")]
         public async Task<IActionResult> FicApiUpdatePromociones
-        (
-            [FromForm]string idpromocion,
-            [FromForm]string descpromocion,
-            //[FromForm]DateTime fechaexpiraini,
-            //[FromForm]DateTime fechaexpirafin,
-            [FromForm]string valor,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            //[FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod,
-            [FromForm]int idtipopromo,
-            [FromForm]int idtipodescuento
-        )
+        ([FromBody] ce_cat_promociones promociones, [FromQuery] string idpromocion)
         {
             try
             {
                 var promocion = FicLoDBContext.ce_cat_promociones.First(a => a.IdPromocion == idpromocion);
-                promocion.IdPromocion = idpromocion;
-                promocion.DesPromocion = descpromocion;
-              //  promocion.FechaExpiraIni = fechaexpiraini;
-               // promocion.FechaExpiraFin = fechaexpirafin;
-                promocion.Valor = valor;
-                promocion.Activo = activo;
-                promocion.Borrado = borrado;
-              //  promocion.FechaUltMod = fechaultmod;
-                promocion.UsuarioMod = usuariomod;
-                promocion.IdTipoPromocion = idtipopromo;
-                promocion.IdTipoDescuento = idtipodescuento;
+                promocion = promociones;
                 FicLoDBContext.SaveChanges();
                 return Ok(promocion);
             }
@@ -249,7 +252,7 @@ namespace AppDAM10DemoRest.Controllers
         
         [HttpGet]
         [Route("/api/promociones-aplica-a/one")]
-        public async Task<IActionResult> FicApiGetListPromocionesAplicaA([FromQuery]string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiGetListPromocionesAplicaA([FromQuery]string idpromocion, [FromQuery]string idtipoaplicaa)
         {
 
             var ce_promociones_aplica_a = (from data_promoaplicaa in FicLoDBContext.ce_cat_promociones_aplica_a where data_promoaplicaa.IdTipoAplicaA  == idtipoaplicaa && data_promoaplicaa.IdPromocion == idpromocion  select data_promoaplicaa).ToList();
@@ -284,10 +287,10 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiNewPromocionesAplicaA
         (
-            [FromForm]int idtipoaplicaa,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
+            [FromForm]string idtipoaplicaa,
+            [FromForm]string activo,
+            [FromForm]string borrado,
+            [FromForm]string fechareg,
             [FromForm]string usuarioreg,
             [FromForm]string idpromocion,
             [FromForm]string valor
@@ -307,7 +310,7 @@ namespace AppDAM10DemoRest.Controllers
         }
         [HttpDelete]
         [Route("/api/promociones-aplica-a")]
-        public async Task<IActionResult> FicApiDeletePromocionesAplicaA([FromQuery] string idpromocion, [FromQuery]int idtipoaplicaa)
+        public async Task<IActionResult> FicApiDeletePromocionesAplicaA([FromQuery] string idpromocion, [FromQuery]string idtipoaplicaa)
         {
             ce_cat_promociones_aplica_a promocion_aplica_a = new ce_cat_promociones_aplica_a();
             promocion_aplica_a.IdPromocion = idpromocion;
@@ -329,9 +332,9 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promociones-aplica-a")]
         public async Task<IActionResult> FicApiUpdatePromociones
         (
-            [FromForm]int idtipoaplicaa,
-            [FromForm]char activo,
-            [FromForm]char borrado,
+            [FromForm]string idtipoaplicaa,
+            [FromForm]string activo,
+            [FromForm]string borrado,
             //[FromForm]DateTime fechaultmod,
             [FromForm]string usuariomod,
             [FromForm]string idpromocion,
@@ -399,13 +402,13 @@ namespace AppDAM10DemoRest.Controllers
         public async Task<IActionResult> FicApiNewPromocionesCantidadFisica
         (
             [FromForm]string idpromocion,
-            [FromForm]int valor,
-            [FromForm]int valoracumulado,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
+            [FromForm]string valor,
+            [FromForm]string valoracumulado,
+            [FromForm]string activo,
+            [FromForm]string borrado,
+            [FromForm]string fechareg,
             [FromForm]string usuarioreg,
-            [FromForm]int idtipodescuento
+            [FromForm]string idtipodescuento
         )
         {
             ce_cat_promociones_cantidad_fisica promocion_cantidad_fisica= new ce_cat_promociones_cantidad_fisica();
@@ -445,13 +448,13 @@ namespace AppDAM10DemoRest.Controllers
         public async Task<IActionResult> FicApiUpdatePromocionesCantidadFisica
         (
             [FromForm]string idpromocion,
-            [FromForm]int valor,
-            [FromForm]int valoracumulado,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
+            [FromForm]string valor,
+            [FromForm]string valoracumulado,
+            [FromForm]string activo,
+            [FromForm]string borrado,
+            [FromForm]string fechaultmod,
             [FromForm]string usuariomod,
-            [FromForm]short idtipodescuento
+            [FromForm]string idtipodescuento
         )
         {
             try
@@ -480,7 +483,7 @@ namespace AppDAM10DemoRest.Controllers
         
         [HttpGet]
         [Route("/api/promo-prod-serv/one")]
-        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]int idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion )
+        public async Task<IActionResult> FicApiGetListPromocionesProdServ([FromQuery]string idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion )
         {
             var ce_promo_prod_serv = (from data_promoprodserv in FicLoDBContext.ce_cat_promo_prod_serv where data_promoprodserv.IdPromocion == idpromocion && data_promoprodserv.IdProdServ == idprodserv && data_promoprodserv.IdPresentacion == idpresentacion select data_promoprodserv).ToList();
             if (ce_promo_prod_serv.Count() > 0)
@@ -514,12 +517,12 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiNewPromocionesProdServ
         (
-            [FromForm]int idprodserv,
+            [FromForm]string idprodserv,
             [FromForm]string idpresentacion,
             [FromForm]string idpromocion,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
+            [FromForm]string activo,
+            [FromForm]string borrado,
+            [FromForm]string fechareg,
             [FromForm]string usuarioreg
         )
         {
@@ -537,7 +540,7 @@ namespace AppDAM10DemoRest.Controllers
         }
         [HttpDelete]
         [Route("/api/promo-prod-serv")]
-        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]int idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion)
+        public async Task<IActionResult> FicApiDeletePromocionesProdServ([FromQuery]string idprodserv, [FromQuery]string idpresentacion, [FromQuery]string idpromocion)
         {
             ce_cat_promo_prod_serv promo_prod_serv = new ce_cat_promo_prod_serv();
             promo_prod_serv.IdProdServ = idprodserv;
@@ -560,12 +563,12 @@ namespace AppDAM10DemoRest.Controllers
         [Route("/api/promo-prod-serv")]
         public async Task<IActionResult> FicApiUpdatePromocionesProdServ
         (
-            [FromForm]int idprodserv,
+            [FromForm]string idprodserv,
             [FromForm]string idpromocion,
             [FromForm]string idpresentacion,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
+            [FromForm]string activo,
+            [FromForm]string borrado,
+            [FromForm]string fechaultmod,
             [FromForm]string usuariomod
         )
         {
@@ -590,224 +593,265 @@ namespace AppDAM10DemoRest.Controllers
                 return Ok(err);
             }
         }
-       /* //RUTAS TIPO GENERALES ===================================================================================
+        /* //RUTAS TIPO GENERALES ===================================================================================
 
+         [HttpGet]
+         [Route("/api/tipo-generales")]
+         public async Task<IActionResult> FicApiGetListTipoGenerales([FromQuery]short idtipogeneral)
+         {
+
+             var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales where data_tipogenerales.IdTipoGeneral == idtipogeneral  select data_tipogenerales).ToList();
+             if (tipo_generales.Count() > 0)
+             {
+                 tipo_generales = tipo_generales.ToList();
+                 return Ok(tipo_generales);
+             }
+             else
+             {
+                 tipo_generales = tipo_generales.ToList();
+                 return Ok(tipo_generales);
+             }
+         }
+         [HttpGet]
+         [Route("/api/tipo-generales")]
+         public async Task<IActionResult> FicApiGetListTipoGenerales()
+         {
+             var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales select data_tipogenerales).ToList();
+             if (tipo_generales.Count() > 0)
+             {
+                 tipo_generales = tipo_generales.ToList();
+                 return Ok(tipo_generales);
+             }
+             else
+             {
+                 tipo_generales = tipo_generales.ToList();
+                 return Ok(tipo_generales);
+             }
+         }
+         [HttpPost]
+         [Route("/api/tipo-generales")]
+         public async Task<IActionResult> FicApiNewTipoGenerales
+         (
+             [FromForm]short idtipogeneral,
+             [FromForm]string destipogeneral,
+             [FromForm]char activo,
+             [FromForm]char borrado,
+             [FromForm]DateTime fechareg,
+             [FromForm]string usuarioreg
+         )
+         {
+             cat_tipo_generales tipo_generales = new cat_tipo_generales();
+             tipo_generales.IdTipoGeneral = idtipogeneral;
+             tipo_generales.DesTipoGeneral = destipogeneral;
+             tipo_generales.Activo = activo;
+             tipo_generales.Borrado = borrado;
+             tipo_generales.FechaReg = fechareg;
+             tipo_generales.UsuarioReg = usuarioreg;
+             FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
+             FicLoDBContext.SaveChanges();
+             return Ok(tipo_generales);
+         }
+         [HttpDelete]
+         [Route("/api/tipo-generales")]
+         public async Task<IActionResult> FicApiDeleteTipoGenerales([FromQuery] short idtipogeneral)
+         {
+             cat_tipo_generales tipo_generales = new cat_tipo_generales();
+             tipo_generales.IdTipoGeneral = idtipogeneral;
+             try
+             {
+                 FicLoDBContext.cat_tipo_generales.Remove(tipo_generales);
+                 FicLoDBContext.SaveChanges();
+                 return Ok(tipo_generales);
+             }
+             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
+             {
+                 Dictionary<String, String> err = new Dictionary<string, string>();
+                 err.Add("err", "No se encontraron registros");
+                 return Ok(err);
+             }
+         }
+         [HttpPut]
+         [Route("/api/tipo-generales")]
+         public async Task<IActionResult> FicApiUpdateTipoGenerales
+         (
+             [FromForm]short idtipogeneral,
+             [FromForm]string destipogeneral,
+             [FromForm]char activo,
+             [FromForm]char borrado,
+             [FromForm]DateTime fechaultmod,
+             [FromForm]string usuariomod
+         )
+         {
+             try
+             {
+                 var tipo_generales = FicLoDBContext.cat_tipo_generales.First(a => a.IdTipoGeneral == idtipogeneral);
+                 tipo_generales.IdTipoGeneral = idtipogeneral;
+                 tipo_generales.DesTipoGeneral = destipogeneral;
+                 tipo_generales.Activo = activo;
+                 tipo_generales.Borrado = borrado;
+                 tipo_generales.FechaUltMod = fechaultmod;
+                 tipo_generales.UsuarioMod = usuariomod;
+                 FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
+                 FicLoDBContext.SaveChanges();
+                 return Ok(tipo_generales);
+             }
+             catch (Exception e)
+             {
+                 Dictionary<String, String> err = new Dictionary<string, string>();
+                 err.Add("err", "No se encontraron registros");
+                 return Ok(err);
+             }
+         }
+
+         //RUTAS GENERALES ===================================================================================
+
+         [HttpGet]
+         [Route("/api/generales")]
+         public async Task<IActionResult> FicApiGetListGenerales([FromQuery]short idgeneral)
+         {
+
+             var general = (from data_general in FicLoDBContext.cat_generales where data_general.IdGeneral == idgeneral select data_general).ToList();
+             if (general.Count() > 0)
+             {
+                 general = general.ToList();
+                 return Ok(general);
+             }
+             else
+             {
+                 general = general.ToList();
+                 return Ok(general);
+             }
+         }
+         [HttpGet]
+         [Route("/api/generales")]
+         public async Task<IActionResult> FicApiGetListGenerales()
+         {
+             var generales = (from data_generales in FicLoDBContext.cat_generales select data_generales).ToList();
+             if (generales.Count() > 0)
+             {
+                 generales = generales.ToList();
+                 return Ok(generales);
+             }
+             else
+             {
+                 generales = generales.ToList();
+                 return Ok(generales);
+             }
+         }
+         [HttpPost]
+         [Route("/api/generales")]
+         public async Task<IActionResult> FicApiNewGenerales
+         (
+             [FromForm]short idgeneral,
+             [FromForm]string desgeneral,
+             [FromForm]char activo,
+             [FromForm]char borrado,
+             [FromForm]DateTime fechareg,
+             [FromForm]string usuarioreg
+         )
+         {
+             cat_generales generales = new cat_generales();
+             generales.IdGeneral = idgeneral;
+             generales.DesGeneral = desgeneral;
+             generales.Activo = activo;
+             generales.Borrado = borrado;
+             generales.FechaReg = fechareg;
+             generales.UsuarioReg = usuarioreg;
+             FicLoDBContext.cat_generales.Add(generales);
+             FicLoDBContext.SaveChanges();
+             return Ok(generales);
+         }
+         [HttpDelete]
+         [Route("/api/generales")]
+         public async Task<IActionResult> FicApiDeleteGenerales([FromQuery] short idgeneral)
+         {
+             cat_generales generales = new cat_generales();
+             generales.IdGeneral = idgeneral;
+             try
+             {
+                 FicLoDBContext.cat_generales.Remove(generales);
+                 FicLoDBContext.SaveChanges();
+                 return Ok(generales);
+             }
+             catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
+             {
+                 Dictionary<String, String> err = new Dictionary<string, string>();
+                 err.Add("err", "No se encontraron registros");
+                 return Ok(err);
+             }
+         }
+         [HttpPut]
+         [Route("/api/generales")]
+         public async Task<IActionResult> FicApiUpdateGenerales
+         (
+             [FromForm]short idgeneral,
+             [FromForm]string desgeneral,
+             [FromForm]char activo,
+             [FromForm]char borrado,
+             [FromForm]DateTime fechaultmod,
+             [FromForm]string usuariomod
+         )
+         {
+             try
+             {
+                 var generales = FicLoDBContext.cat_generales.First(a => a.IdGeneral == idgeneral);
+                 generales.IdGeneral = idgeneral;
+                 generales.DesGeneral = desgeneral;
+                 generales.Activo = activo;
+                 generales.Borrado = borrado;
+                 generales.FechaUltMod = fechaultmod;
+                 generales.UsuarioMod = usuariomod;
+                 FicLoDBContext.cat_generales.Add(generales);
+                 FicLoDBContext.SaveChanges();
+                 return Ok(generales);
+             }
+             catch (Exception e)
+             {
+                 Dictionary<String, String> err = new Dictionary<string, string>();
+                 err.Add("err", "No se encontraron registros");
+                 return Ok(err);
+             }
+         }*/
         [HttpGet]
-        [Route("/api/tipo-generales")]
-        public async Task<IActionResult> FicApiGetListTipoGenerales([FromQuery]short idtipogeneral)
+        [Route("/api/prod-serv")]
+        public async Task<IActionResult> FicApiGetListProdServ()
         {
-
-            var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales where data_tipogenerales.IdTipoGeneral == idtipogeneral  select data_tipogenerales).ToList();
-            if (tipo_generales.Count() > 0)
+            var ce_cat_prod_serv2 = (from data_prodserv in FicLoDBContext.ce_cat_prod_serv2 select data_prodserv).ToList();
+            if (ce_cat_prod_serv2.Count() > 0)
             {
-                tipo_generales = tipo_generales.ToList();
-                return Ok(tipo_generales);
+                ce_cat_prod_serv2 = ce_cat_prod_serv2.ToList();
+                return Ok(ce_cat_prod_serv2);
             }
             else
             {
-                tipo_generales = tipo_generales.ToList();
-                return Ok(tipo_generales);
-            }
-        }
-        [HttpGet]
-        [Route("/api/tipo-generales")]
-        public async Task<IActionResult> FicApiGetListTipoGenerales()
-        {
-            var tipo_generales = (from data_tipogenerales in FicLoDBContext.cat_tipo_generales select data_tipogenerales).ToList();
-            if (tipo_generales.Count() > 0)
-            {
-                tipo_generales = tipo_generales.ToList();
-                return Ok(tipo_generales);
-            }
-            else
-            {
-                tipo_generales = tipo_generales.ToList();
-                return Ok(tipo_generales);
-            }
-        }
-        [HttpPost]
-        [Route("/api/tipo-generales")]
-        public async Task<IActionResult> FicApiNewTipoGenerales
-        (
-            [FromForm]short idtipogeneral,
-            [FromForm]string destipogeneral,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg
-        )
-        {
-            cat_tipo_generales tipo_generales = new cat_tipo_generales();
-            tipo_generales.IdTipoGeneral = idtipogeneral;
-            tipo_generales.DesTipoGeneral = destipogeneral;
-            tipo_generales.Activo = activo;
-            tipo_generales.Borrado = borrado;
-            tipo_generales.FechaReg = fechareg;
-            tipo_generales.UsuarioReg = usuarioreg;
-            FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
-            FicLoDBContext.SaveChanges();
-            return Ok(tipo_generales);
-        }
-        [HttpDelete]
-        [Route("/api/tipo-generales")]
-        public async Task<IActionResult> FicApiDeleteTipoGenerales([FromQuery] short idtipogeneral)
-        {
-            cat_tipo_generales tipo_generales = new cat_tipo_generales();
-            tipo_generales.IdTipoGeneral = idtipogeneral;
-            try
-            {
-                FicLoDBContext.cat_tipo_generales.Remove(tipo_generales);
-                FicLoDBContext.SaveChanges();
-                return Ok(tipo_generales);
-            }
-            catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
-            {
-                Dictionary<String, String> err = new Dictionary<string, string>();
-                err.Add("err", "No se encontraron registros");
-                return Ok(err);
-            }
-        }
-        [HttpPut]
-        [Route("/api/tipo-generales")]
-        public async Task<IActionResult> FicApiUpdateTipoGenerales
-        (
-            [FromForm]short idtipogeneral,
-            [FromForm]string destipogeneral,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod
-        )
-        {
-            try
-            {
-                var tipo_generales = FicLoDBContext.cat_tipo_generales.First(a => a.IdTipoGeneral == idtipogeneral);
-                tipo_generales.IdTipoGeneral = idtipogeneral;
-                tipo_generales.DesTipoGeneral = destipogeneral;
-                tipo_generales.Activo = activo;
-                tipo_generales.Borrado = borrado;
-                tipo_generales.FechaUltMod = fechaultmod;
-                tipo_generales.UsuarioMod = usuariomod;
-                FicLoDBContext.cat_tipo_generales.Add(tipo_generales);
-                FicLoDBContext.SaveChanges();
-                return Ok(tipo_generales);
-            }
-            catch (Exception e)
-            {
-                Dictionary<String, String> err = new Dictionary<string, string>();
-                err.Add("err", "No se encontraron registros");
-                return Ok(err);
+                ce_cat_prod_serv2 = ce_cat_prod_serv2.ToList();
+                return Ok(ce_cat_prod_serv2);
             }
         }
 
-        //RUTAS GENERALES ===================================================================================
-
         [HttpGet]
-        [Route("/api/generales")]
-        public async Task<IActionResult> FicApiGetListGenerales([FromQuery]short idgeneral)
+        [Route("/api/prod-serv/grid")]
+        public async Task<IActionResult> FicApiGetGridProdServ()
         {
-
-            var general = (from data_general in FicLoDBContext.cat_generales where data_general.IdGeneral == idgeneral select data_general).ToList();
-            if (general.Count() > 0)
+            var ce_prod_serv = (from data_inv in FicLoDBContext.ce_cat_prod_serv2
+                                  select new
+                                  {
+                                      data_inv.IdProdServ,
+                                      data_inv.Marca,
+                                      data_inv.Modelo,
+                                      data_inv.PuntosXVenta,
+                                      data_inv.Depto
+                                  }).ToList();
+            if (ce_prod_serv.Count() > 0)
             {
-                general = general.ToList();
-                return Ok(general);
+                ce_prod_serv = ce_prod_serv.ToList();
+                return Ok(ce_prod_serv);
             }
             else
             {
-                general = general.ToList();
-                return Ok(general);
+                ce_prod_serv = ce_prod_serv.ToList();
+                return Ok(ce_prod_serv);
             }
         }
-        [HttpGet]
-        [Route("/api/generales")]
-        public async Task<IActionResult> FicApiGetListGenerales()
-        {
-            var generales = (from data_generales in FicLoDBContext.cat_generales select data_generales).ToList();
-            if (generales.Count() > 0)
-            {
-                generales = generales.ToList();
-                return Ok(generales);
-            }
-            else
-            {
-                generales = generales.ToList();
-                return Ok(generales);
-            }
-        }
-        [HttpPost]
-        [Route("/api/generales")]
-        public async Task<IActionResult> FicApiNewGenerales
-        (
-            [FromForm]short idgeneral,
-            [FromForm]string desgeneral,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechareg,
-            [FromForm]string usuarioreg
-        )
-        {
-            cat_generales generales = new cat_generales();
-            generales.IdGeneral = idgeneral;
-            generales.DesGeneral = desgeneral;
-            generales.Activo = activo;
-            generales.Borrado = borrado;
-            generales.FechaReg = fechareg;
-            generales.UsuarioReg = usuarioreg;
-            FicLoDBContext.cat_generales.Add(generales);
-            FicLoDBContext.SaveChanges();
-            return Ok(generales);
-        }
-        [HttpDelete]
-        [Route("/api/generales")]
-        public async Task<IActionResult> FicApiDeleteGenerales([FromQuery] short idgeneral)
-        {
-            cat_generales generales = new cat_generales();
-            generales.IdGeneral = idgeneral;
-            try
-            {
-                FicLoDBContext.cat_generales.Remove(generales);
-                FicLoDBContext.SaveChanges();
-                return Ok(generales);
-            }
-            catch (Microsoft.EntityFrameworkCore.DbUpdateException e)
-            {
-                Dictionary<String, String> err = new Dictionary<string, string>();
-                err.Add("err", "No se encontraron registros");
-                return Ok(err);
-            }
-        }
-        [HttpPut]
-        [Route("/api/generales")]
-        public async Task<IActionResult> FicApiUpdateGenerales
-        (
-            [FromForm]short idgeneral,
-            [FromForm]string desgeneral,
-            [FromForm]char activo,
-            [FromForm]char borrado,
-            [FromForm]DateTime fechaultmod,
-            [FromForm]string usuariomod
-        )
-        {
-            try
-            {
-                var generales = FicLoDBContext.cat_generales.First(a => a.IdGeneral == idgeneral);
-                generales.IdGeneral = idgeneral;
-                generales.DesGeneral = desgeneral;
-                generales.Activo = activo;
-                generales.Borrado = borrado;
-                generales.FechaUltMod = fechaultmod;
-                generales.UsuarioMod = usuariomod;
-                FicLoDBContext.cat_generales.Add(generales);
-                FicLoDBContext.SaveChanges();
-                return Ok(generales);
-            }
-            catch (Exception e)
-            {
-                Dictionary<String, String> err = new Dictionary<string, string>();
-                err.Add("err", "No se encontraron registros");
-                return Ok(err);
-            }
-        }*/
     }
 }
